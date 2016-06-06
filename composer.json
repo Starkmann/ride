@@ -11,12 +11,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Eike\\Rideext\\": "Classes/" 
+            "Eike\\Rideext\\": "typo3conf/ext/ride/Classes" 
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Eike\\Rideext\\Tests": "Tests/" 
+            "Eike\\Rideext\\Tests": "typo3conf/ext/ride/Tests/" 
         }
     }
 }
