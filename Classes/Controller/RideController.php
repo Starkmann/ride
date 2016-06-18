@@ -42,6 +42,14 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     protected $rideRepository = NULL;
     
     /**
+     * addressRepository
+     *
+     * @var \Eike\Ride\Domain\Repository\AddressRepository
+     * @inject
+     */
+    protected $addressRepository = NULL;
+    
+    /**
      * access
      *
      * @var \Eike\Ride\Service\Access
@@ -57,8 +65,10 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     public function listAction()
     {
         $rides = $this->rideRepository->findAll();
+        
         $this->view->assign('feUser', $this->access->getLoggedInFrontendUser());
         $this->view->assign('rides', $rides);
+        $this->view->assign('destination', $this->addressRepository->findByUid($this->settings['destination']));
     }
     
     /**

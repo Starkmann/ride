@@ -13,7 +13,7 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-<h1>Listing for Ride</h1>
+<h1>Rides for {destination.name}</h1>
 
 <f:flashMessages />
 <div id="map" style="width: 490px; height: 620px"></div>
@@ -26,13 +26,26 @@ Otherwise your changes will be overwritten the next time you save the extension 
 		accesssToken="{settings.accessToken}" 
 		maxZoom="{settings.maxZoom}" 
 		attribution="Map data &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"http://mapbox.com\">Mapbox</a>">
-
 	</u:mapBoxTileLayer> 
+	
 	<f:for each="{rides}" as="ride">
-		<f:if condition="{ride.lat}">
-			<f:if condition="{ride.lon}">
-				L.marker([{ride.lat}, {ride.lon}]).addTo(map)
-			    .bindPopup('<b>{ride.driver.name}</b>')
+		<f:if condition="{ride.start.latitude}">
+			<f:if condition="{ride.start.longitude}">
+				L.marker([{ride.start.latitude}, {ride.start.longitude}]).addTo(map)
+			    .bindPopup('<b>{ride.driver.username}</b>')
+			    
+			    var pointA = new L.LatLng({ride.start.latitude}, {ride.start.longitude});
+				var pointB = new L.LatLng({ride.destination.latitude}, {ride.destination.longitude});
+				var pointList = [pointA, pointB];
+				
+				var firstpolyline = new L.Polyline(pointList, {
+				color: 'red',
+				weight: 3,
+				opacity: 0.5,
+				smoothFactor: 1
+				
+				});
+				firstpolyline.addTo(map);
 			</f:if>
 		</f:if>
 	</f:for>
@@ -43,10 +56,10 @@ Otherwise your changes will be overwritten the next time you save the extension 
 	<ul>
 	<f:for each="{rides}" as="ride">
 		<li>
+			<f:link.action action="show" arguments="{ride : ride}"> {ride.start.name}</f:link.action>
 			<f:link.action action="show" arguments="{ride : ride}"> {ride.description}</f:link.action>
 			<f:link.action action="show" arguments="{ride : ride}"> {ride.date -> f:format.date()}</f:link.action>
 			<f:link.action action="show" arguments="{ride : ride}"> {ride.space}</f:link.action>
-			<f:link.action action="show" arguments="{ride : ride}"> {ride.route}</f:link.action>
 			<f:render partial="ButtonsEditDelete" arguments="{ride : ride, feUser:feUser}" />
 		</li>
 	</f:for>

@@ -25,6 +25,15 @@
 							</config>
 						</TCEforms>
 					</switchableControllerActions>
+					<settings.destination>
+						<TCEforms>
+							<label>Ziel</label>
+							<config>
+							  <type>select</type>
+							  <foreign_table>tx_ride_domain_model_address</foreign_table>
+							</config>
+						</TCEforms>
+					</settings.destination>
 					<settings.maxZoom>
 					    <TCEforms>
 					      <label>Maximale Zoomstufe (Default: 16)</label>
