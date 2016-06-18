@@ -10,6 +10,9 @@ plugin.tx_ride_list {
 	}
 }
 
+page.includeCSS.tx_ride = EXT:ride/Resources/Public/Css/leaflet.css
+page.includeJS.tx_ride = EXT:ride/Resources/Public/Scripts/leaflet.js
+
 plugin.tx_ride._CSS_DEFAULT_STYLE (
 	textarea.f3-form-error {
 		background-color:#FF9F9F;
