@@ -17,10 +17,11 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <f:flashMessages />
 
+
 <f:render partial="FormErrors" arguments="{object:Ride}" />
 
 <f:form action="create"  name="newRide" object="{newRide}">
-<f:render partial="Ride/FormFields" />
+<f:render partial="Ride/FormFields" arguments="{driver:driver}" />
 	<f:form.submit value="Create new" />
 </f:form>
 </f:section>

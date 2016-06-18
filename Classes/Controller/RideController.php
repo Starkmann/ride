@@ -1,6 +1,7 @@
 <?php
 namespace Eike\Ride\Controller;
 
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 /***************************************************************
  *
  *  Copyright notice
@@ -41,6 +42,14 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     protected $rideRepository = NULL;
     
     /**
+     * access
+     *
+     * @var \Eike\Ride\Service\Access
+     * @inject
+     */
+    protected $access = NULL;
+    
+    /**
      * action list
      *
      * @return void
@@ -48,6 +57,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     public function listAction()
     {
         $rides = $this->rideRepository->findAll();
+        $this->view->assign('feUser', $this->access->getLoggedInFrontendUser());
         $this->view->assign('rides', $rides);
     }
     
@@ -69,7 +79,10 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function newAction()
     {
-        
+    	if(!$this->access->getLoggedInFrontendUser()){
+    		throw new InsufficientUserPermissionsException('You are not logged in so you cannot create something here',1466258305);
+    	}
+    	$this->view->assign('driver', $this->access->getLoggedInFrontendUser());
     }
     
     /**
@@ -80,7 +93,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function createAction(\Eike\Ride\Domain\Model\Ride $newRide)
     {
-        $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+    	$this->addFlashMessage('The object was created.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
         $this->rideRepository->add($newRide);
         $this->redirect('list');
     }
@@ -94,7 +107,11 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function editAction(\Eike\Ride\Domain\Model\Ride $ride)
     {
+    	if(!$this->access->mayEditOrDelete($ride, $this->access->getLoggedInFrontendUser())){
+    		throw new InsufficientUserPermissionsException('You are not allowed to edit this ride',1466260533);
+    	}
         $this->view->assign('ride', $ride);
+        $this->view->assign('driver', $this->access->getLoggedInFrontendUser());
     }
     
     /**
@@ -105,7 +122,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function updateAction(\Eike\Ride\Domain\Model\Ride $ride)
     {
-        $this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+        $this->addFlashMessage('The object was updated.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
         $this->rideRepository->update($ride);
         $this->redirect('list');
     }
@@ -118,7 +135,10 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function deleteAction(\Eike\Ride\Domain\Model\Ride $ride)
     {
-        $this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+    	if(!$this->access->mayEditOrDelete($ride, $this->access->getLoggedInFrontendUser())){
+    		throw new InsufficientUserPermissionsException('You are not allowed to delete this ride',1466260675);
+    	}
+        $this->addFlashMessage('The object was deleted.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
         $this->rideRepository->remove($ride);
         $this->redirect('list');
     }

@@ -17,27 +17,19 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <f:flashMessages />
 
-<table  class="tx_ride" >
-	<tr>
-		<th><f:translate key="tx_ride_domain_model_ride.description" /></th>
-		<th><f:translate key="tx_ride_domain_model_ride.date" /></th>
-		<th><f:translate key="tx_ride_domain_model_ride.space" /></th>
-		<th><f:translate key="tx_ride_domain_model_ride.route" /></th>
-		<th> </th>
-		<th> </th>
-	</tr>
-
+<f:if condition="{rides}">
+	<ul>
 	<f:for each="{rides}" as="ride">
-		<tr>
-			<td><f:link.action action="show" arguments="{ride : ride}"> {ride.description}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{ride : ride}"> {ride.date -> f:format.date()}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{ride : ride}"> {ride.space}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{ride : ride}"> {ride.route}</f:link.action></td>
-			<td><f:link.action action="edit" arguments="{ride : ride}">Edit</f:link.action></td>
-			<td><f:link.action action="delete" arguments="{ride : ride}">Delete</f:link.action></td>
-		</tr>
+		<li>
+			<f:link.action action="show" arguments="{ride : ride}"> {ride.description}</f:link.action>
+			<f:link.action action="show" arguments="{ride : ride}"> {ride.date -> f:format.date()}</f:link.action>
+			<f:link.action action="show" arguments="{ride : ride}"> {ride.space}</f:link.action>
+			<f:link.action action="show" arguments="{ride : ride}"> {ride.route}</f:link.action>
+			<f:render partial="ButtonsEditDelete" arguments="{ride : ride, feUser:feUser}" />
+		</li>
 	</f:for>
-</table>
+	</ul>
+</f:if>
 
 <f:link.action action="new">New Ride</f:link.action>
 </f:section>

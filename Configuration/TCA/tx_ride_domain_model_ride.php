@@ -193,10 +193,9 @@ return array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:ride/Resources/Private/Language/locallang_db.xlf:tx_ride_domain_model_ride.driver',
 			'config' => array(
-				'type' => 'inline',
+				'type' => 'select',
 				'foreign_table' => 'fe_users',
-				'foreign_field' => 'ride',
-				'maxitems' => 9999,
+				'maxitems' => 1,
 				'appearance' => array(
 					'collapseAll' => 0,
 					'levelLinksPosition' => 'top',
