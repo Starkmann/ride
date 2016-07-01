@@ -54,3 +54,48 @@
 	<f:translate key="tx_ride_domain_model_address.latitude" />
 </label>
 <f:form.textfield property="start.longitude" /><br />
+<f:if condition="{settings.destination} > 0">
+	<f:then>
+		<f:form.hidden property="destination" value="{settings.destination}" />
+	</f:then>
+	<f:else>
+		<h3>Destination</h3>
+		<label for="space">
+			<f:translate key="tx_ride_domain_model_address.name" />
+		</label><br />
+			<f:form.textfield property="destination.name" /><br />
+		<label for="space">
+			<f:translate key="tx_ride_domain_model_address.street" />
+		</label><br />
+		<f:form.textfield property="destination.street" />
+		<label for="space">
+			<f:translate key="tx_ride_domain_model_address.street_number" />
+		</label>
+		<f:form.textfield property="destination.streetNumber" /> <br />
+		<label for="space">
+			<f:translate key="tx_ride_domain_model_address.city" />
+		
+		</label><br />
+		<f:form.textfield property="destination.city" /> <br />
+		<label for="space">
+			<f:translate key="tx_ride_domain_model_address.zip" />
+		</label><br />
+		<f:form.textfield property="destination.zip" /> <br />
+		<label for="space">
+			<f:translate key="tx_ride_domain_model_address.country" />
+		</label><br />
+		<f:form.textfield property="destination.country" /> <br />
+		<label for="space">
+			<f:translate key="tx_ride_domain_model_address.state" />
+		</label><br />
+		<f:form.textfield property="destination.state" /> <br />
+		<label for="space">
+			<f:translate key="tx_ride_domain_model_address.latitude" />
+		</label><br />
+		<f:form.textfield property="destination.latitude" />
+		<label for="space">
+			<f:translate key="tx_ride_domain_model_address.latitude" />
+		</label>
+		<f:form.textfield property="destination.longitude" /><br />
+	</f:else>
+</f:if>
