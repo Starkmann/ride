@@ -58,6 +58,13 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     protected $access = NULL;
     
     /**
+     *
+     * @var \Eike\Ride\Service\Address
+     * @inject
+     */
+    protected $addressService = NULL;
+    
+    /**
      * action list
      *
      * @return void
@@ -104,6 +111,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     public function createAction(\Eike\Ride\Domain\Model\Ride $newRide)
     {
     	$this->addFlashMessage('The object was created.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
+    	$this->addressService->updateCoordinates($newRide->getStart());
         $this->rideRepository->add($newRide);
         $this->redirect('list');
     }
@@ -133,6 +141,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     public function updateAction(\Eike\Ride\Domain\Model\Ride $ride)
     {
         $this->addFlashMessage('The object was updated.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
+        $this->addressService->updateCoordinates($ride->getStart());
         $this->rideRepository->update($ride);
         $this->redirect('list');
     }

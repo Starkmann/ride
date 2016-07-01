@@ -31,9 +31,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 	<f:for each="{rides}" as="ride">
 		<f:if condition="{ride.start.latitude}">
 			<f:if condition="{ride.start.longitude}">
-				L.marker([{ride.start.latitude}, {ride.start.longitude}]).addTo(map)
-			    .bindPopup('<b>{ride.driver.username}</b>')
-			    
+				
 			    L.Routing.control({
 				    waypoints: [
 				        L.latLng({ride.start.latitude}, {ride.start.longitude}),
@@ -48,6 +46,8 @@ Otherwise your changes will be overwritten the next time you save the extension 
 				L.Routing.Itinerary({
 					show: false
 				})
+				L.marker([{ride.start.latitude}, {ride.start.longitude}]).addTo(map)
+				.bindPopup('<b><f:link.action action="show" arguments="{ride : ride}">{ride.driver.username} ({ride.start.name})</f:link.action> </b>')
 			</f:if>
 		</f:if>
 	</f:for>
