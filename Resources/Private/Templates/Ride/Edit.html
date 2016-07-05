@@ -20,7 +20,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:render partial="FormErrors" arguments="{object:Ride}" />
 
 <f:form action="update" name="ride" object="{ride}" >
-<f:render partial="Ride/FormFields" arguments="{ride:ride}" />
+<f:render partial="Ride/FormFields" arguments="{ride:ride, driver:driver}" />
 	<f:form.submit value="Save" />
 </f:form>
 </f:section>

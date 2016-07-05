@@ -1,4 +1,4 @@
-
+{namespace u=Eike\Ride\ViewHelpers}
 <f:layout name="Default" />
 
 This Template is responsible for creating a table of domain objects.
@@ -13,31 +13,59 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-<h1>Listing for Ride</h1>
+<h1>Rides for {destination.name}</h1>
 
 <f:flashMessages />
+<div id="map" style="width: 490px; height: 620px"></div>
+<script>
+	var map = L.map('map').setView([{settings.latitude}, {settings.longitude}], {settings.mapZoom});
 
-<table  class="tx_ride" >
-	<tr>
-		<th><f:translate key="tx_ride_domain_model_ride.description" /></th>
-		<th><f:translate key="tx_ride_domain_model_ride.date" /></th>
-		<th><f:translate key="tx_ride_domain_model_ride.space" /></th>
-		<th><f:translate key="tx_ride_domain_model_ride.route" /></th>
-		<th> </th>
-		<th> </th>
-	</tr>
 
+	<u:mapBoxTileLayer 
+		id="{settings.id}" 
+		accesssToken="{settings.accessToken}" 
+		maxZoom="{settings.maxZoom}" 
+		attribution="Map data &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"http://mapbox.com\">Mapbox</a>">
+	</u:mapBoxTileLayer> 
+	
 	<f:for each="{rides}" as="ride">
-		<tr>
-			<td><f:link.action action="show" arguments="{ride : ride}"> {ride.description}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{ride : ride}"> {ride.date -> f:format.date()}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{ride : ride}"> {ride.space}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{ride : ride}"> {ride.route}</f:link.action></td>
-			<td><f:link.action action="edit" arguments="{ride : ride}">Edit</f:link.action></td>
-			<td><f:link.action action="delete" arguments="{ride : ride}">Delete</f:link.action></td>
-		</tr>
+		<f:if condition="{ride.start.latitude}">
+			<f:if condition="{ride.start.longitude}">
+				
+			    L.Routing.control({
+				    waypoints: [
+				        L.latLng({ride.start.latitude}, {ride.start.longitude}),
+				        L.latLng({ride.destination.latitude}, {ride.destination.longitude})
+				    ],
+				    routeWhileDragging: false,
+				    show: false,
+				    showAlternatives : false,
+				    draggableWaypoints: false,
+				    addWaypoints: false
+				}).addTo(map);
+				L.Routing.Itinerary({
+					show: false
+				})
+				L.marker([{ride.start.latitude}, {ride.start.longitude}]).addTo(map)
+				.bindPopup('<b><f:link.action action="show" arguments="{ride : ride}">{ride.driver.username} ({ride.start.name})</f:link.action> </b>')
+			</f:if>
+		</f:if>
 	</f:for>
-</table>
 
-<f:link.action action="new">New Ride</f:link.action>
+</script>
+
+<f:if condition="{rides}">
+	<ul>
+	<f:for each="{rides}" as="ride">
+		<li>
+			<f:link.action action="show" arguments="{ride : ride}"> {ride.description}</f:link.action> ({ride.start.city})
+			<f:render partial="ButtonsEditDelete" arguments="{ride : ride, feUser:feUser}" />
+			{ride.date -> f:format.date()}
+		</li>
+	</f:for>
+	</ul>
+</f:if>
+<f:if condition="{feUser}">
+	<f:link.action action="new">New Ride</f:link.action>
+</f:if>
 </f:section>

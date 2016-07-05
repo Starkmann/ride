@@ -71,8 +71,8 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * driver
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Eike\Ride\Domain\Model\FeUser>
-     * @cascade remove
+     * @var \Eike\Ride\Domain\Model\FeUser
+     * 
      */
     protected $driver = null;
     
@@ -197,31 +197,9 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
     
     /**
-     * Adds a FeUser
-     *
-     * @param \Eike\Ride\Domain\Model\FeUser $driver
-     * @return void
-     */
-    public function addDriver(\Eike\Ride\Domain\Model\FeUser $driver)
-    {
-        $this->driver->attach($driver);
-    }
-    
-    /**
-     * Removes a FeUser
-     *
-     * @param \Eike\Ride\Domain\Model\FeUser $driverToRemove The FeUser to be removed
-     * @return void
-     */
-    public function removeDriver(\Eike\Ride\Domain\Model\FeUser $driverToRemove)
-    {
-        $this->driver->detach($driverToRemove);
-    }
-    
-    /**
      * Returns the driver
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Eike\Ride\Domain\Model\FeUser> $driver
+     * @return \Eike\Ride\Domain\Model\FeUser $driver
      */
     public function getDriver()
     {
@@ -231,10 +209,10 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the driver
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Eike\Ride\Domain\Model\FeUser> $driver
+     * @param \Eike\Ride\Domain\Model\FeUser $driver
      * @return void
      */
-    public function setDriver(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $driver)
+    public function setDriver($driver)
     {
         $this->driver = $driver;
     }

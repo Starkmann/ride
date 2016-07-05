@@ -40,6 +40,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     protected $addressRepository = NULL;
     
+    
     /**
      * action list
      *
@@ -106,7 +107,8 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     public function updateAction(\Eike\Ride\Domain\Model\Address $address)
     {
         $this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-        $this->addressRepository->update($address);
+        
+        $this->addressService->updateCoordinates($address);
         $this->redirect('list');
     }
     

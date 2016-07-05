@@ -1,0 +1,7 @@
+{namespace u=Eike\Ride\ViewHelpers}
+<u:access.mayEditObject ride="{ride}" user="{feUser}">
+	<div class="rideLinks">
+		<f:link.action action="edit" arguments="{ride : ride}">Edit</f:link.action>
+		<f:link.action action="delete" arguments="{ride : ride}">Delete</f:link.action>
+	</div>
+</u:access.mayEditObject>
