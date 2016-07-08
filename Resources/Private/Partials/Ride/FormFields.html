@@ -8,10 +8,10 @@
 </label><br />
 	<f:if condition="{ride.date}">
 		<f:then>
-			<f:form.textfield property="date"  value="{ride.date->f:format.date(format:'Y-m-d H:i')}" /><br />
+			<f:form.textfield property="date" value="{ride.date->f:format.date(format:'Y-m-d H:i')}" type="date" /><br />
 		</f:then>
 		<f:else>
-			<f:form.textfield property="date"  value="{now->f:format.date(format:'Y-m-d H:i')}" /><br />
+			<f:form.textfield property="date" value="{now->f:format.date(format:'Y-m-d H:i')}" type="date"  /><br />
 		</f:else>
 	</f:if>
 <label for="space">

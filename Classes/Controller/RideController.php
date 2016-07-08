@@ -116,6 +116,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     	if(!$this->access->getLoggedInFrontendUser()){
     		throw new InsufficientUserPermissionsException('You are not logged in so you cannot create something here',1466258305);
     	}
+    	$this->view->assign('now', new \DateTime());
     	$this->view->assign('driver', $this->access->getLoggedInFrontendUser());
     }
     
