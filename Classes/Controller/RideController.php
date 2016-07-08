@@ -40,7 +40,6 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @inject
      */
     protected $rideRepository = NULL;
-    
     /**
      * addressRepository
      *
@@ -63,6 +62,24 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @inject
      */
     protected $addressService = NULL;
+    
+    public function initializeCreateAction() {
+        if (isset($this->arguments['newRide'])) {
+            $this->arguments['newRide']
+            ->getPropertyMappingConfiguration()
+            ->forProperty('date')
+            ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter', \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'Y-m-d H:i');
+        }
+    }
+    
+    public function initializeUpdateAction() {
+        if (isset($this->arguments['ride'])) {
+            $this->arguments['ride']
+            ->getPropertyMappingConfiguration()
+            ->forProperty('date')
+            ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter', \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'Y-m-d H:i');
+        }
+    }
     
     /**
      * action list

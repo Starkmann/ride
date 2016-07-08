@@ -12,7 +12,7 @@ if (!defined('TYPO3_MODE')) {
 	),
 	// non-cacheable actions
 	array(
-		'Ride' => 'create, delete, update',
+		'Ride' => 'new, create, delete, update',
 		
 	)
 );

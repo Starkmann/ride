@@ -6,6 +6,14 @@
 <label for="date">
 	<f:translate key="tx_ride_domain_model_ride.date" />
 </label><br />
+	<f:if condition="{ride.date}">
+		<f:then>
+			<f:form.textfield property="date"  value="{ride.date->f:format.date(format:'Y-m-d H:i')}" /><br />
+		</f:then>
+		<f:else>
+			<f:form.textfield property="date"  value="{now->f:format.date(format:'Y-m-d H:i')}" /><br />
+		</f:else>
+	</f:if>
 <label for="space">
 	<f:translate key="tx_ride_domain_model_ride.space" />
 </label><br />
