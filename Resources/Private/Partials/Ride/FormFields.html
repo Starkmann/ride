@@ -18,10 +18,10 @@
     <div class="controls">
         <f:if condition="{ride.date}">
             <f:then>
-                <f:form.textfield property="date" value="{ride.date->f:format.date(format:'Y-m-d H:i')}" type="date"class="span4" />
+                <f:form.textfield property="date" value="{ride.date->f:format.date(format:'Y/m/d H:i')}" id="datetimepicker" type="text" class="span4" />
             </f:then>
             <f:else>
-                <f:form.textfield property="date" value="{now->f:format.date(format:'Y-m-d H:i')}" type="date" class="span4"/>
+                <f:form.textfield property="date" value="{now->f:format.date(format:'Y/m/d H:i')}" id="datetimepicker" type="text" class="span4"/>
             </f:else>
         </f:if>
         <f:form.textfield property="space" class="span4"/>
@@ -29,15 +29,6 @@
 </div>
 
 <f:form.hidden property="driver" value="{driver.uid}" />
-
-<div class="controls controls-row">
-    <label for="name">
-        <f:translate key="tx_ride_domain_model_address.name" /> 
-    </label>
-    <div class="controls">
-        <f:form.textfield property="start.name" class="span8"/>
-    </div>
-</div>
 
 <div class="controls controls-row">
     <label for="street">

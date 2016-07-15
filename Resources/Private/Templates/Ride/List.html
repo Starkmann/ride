@@ -77,13 +77,17 @@ Otherwise your changes will be overwritten the next time you save the extension 
 			     {ride.start.city}
 			 </td>
 			 <td>
-			     {ride.date -> f:format.date()}
+			     {ride.date -> f:format.date(format:'Y/m/d H:i')}
 			 </td>
 			 <td>
 			     <f:link.action action="show" arguments="{ride : ride}"><span class="btn btn-small">Eintrag ansehen</span> </f:link.action>
-			 </td></tr>
+			 </td>
+			 <td>
+			 	<f:render partial="ButtonsEditDelete" arguments="{ride : ride, feUser:feUser}" />
+			 </td>
+			 </tr>
 			 </tbody>
-			<f:render partial="ButtonsEditDelete" arguments="{ride : ride, feUser:feUser}" />	
+				
 		</li>
 	</f:for>
 	</table>
