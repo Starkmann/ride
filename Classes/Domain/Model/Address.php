@@ -31,14 +31,6 @@ namespace Eike\Ride\Domain\Model;
  */
 class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
-
-    /**
-     * name
-     *
-     * @var string
-     * @validate NotEmpty
-     */
-    protected $name = '';
     
     /**
      * street
@@ -58,6 +50,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * city
      *
      * @var string
+     * @validate NotEmpty
      */
     protected $city = '';
     
@@ -95,27 +88,6 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var string
      */
     protected $longitude = '';
-    
-    /**
-     * Returns the name
-     *
-     * @return string $name
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-    
-    /**
-     * Sets the name
-     *
-     * @param string $name
-     * @return void
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
     
     /**
      * Returns the street

@@ -19,7 +19,7 @@ return array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'name,street,street_number,city,zip,country,state,latitude,longitude,',
+		'searchFields' => 'street,street_number,city,zip,country,state,latitude,longitude,',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('ride') . 'Resources/Public/Icons/tx_ride_domain_model_address.gif'
 	),
 	'interface' => array(
@@ -113,16 +113,6 @@ return array(
 				'range' => array(
 					'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
 				),
-			),
-		),
-
-		'name' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:ride/Resources/Private/Language/locallang_db.xlf:tx_ride_domain_model_address.name',
-			'config' => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim,required'
 			),
 		),
 		'street' => array(
