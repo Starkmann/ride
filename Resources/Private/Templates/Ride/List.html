@@ -66,6 +66,13 @@ Otherwise your changes will be overwritten the next time you save the extension 
 	</ul>
 </f:if>
 <f:if condition="{feUser}">
-	<f:link.action action="new">New Ride</f:link.action>
+	<f:then>
+		<f:link.action action="new">New Ride</f:link.action>
+	</f:then>
+	<f:else>
+		<f:if condition="{settings.registrationPid}">
+			<f:link.page pageUid="{settings.registrationPid}">Regster to post an ride</f:link.page>
+		</f:if>
+	</f:else>
 </f:if>
 </f:section>

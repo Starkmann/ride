@@ -34,6 +34,16 @@
 							</config>
 						</TCEforms>
 					</settings.destination>
+					<settings.registrationPid>
+						<TCEforms>
+							<label>Registrierung</label>
+							<config>
+							  <type>group</type>
+							  <internal_type>db</internal_type>
+							  <allowed>pages</allowed>
+							</config>
+						</TCEforms>
+					</settings.registrationPid>
 					<settings.maxZoom>
 					    <TCEforms>
 					      <label>Maximale Zoomstufe (Default: 16)</label>
@@ -87,11 +97,6 @@
 					      </config>
 					    </TCEforms>
 					  </settings.id>
-				
-				
-				
-				
-				
 					  <settings.mapWidth>
 					    <TCEforms>
 					      <label>Map Width (Default: 500px)</label>
@@ -117,7 +122,6 @@
 					      </config>
 					    </TCEforms>
 					  </settings.mapHeight>
-					
 				</el>
 			</ROOT>
 		</sDEF>
