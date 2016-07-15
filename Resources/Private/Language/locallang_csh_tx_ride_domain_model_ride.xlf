@@ -4,28 +4,28 @@
 		<header/>
 		<body>
 			<trans-unit id="description.description">
-				<source>Description</source>
+				<source>Beschreibung</source>
 			</trans-unit>
 			<trans-unit id="date.description">
-				<source>Date</source>
+				<source>Datum</source>
 			</trans-unit>
 			<trans-unit id="space.description">
-				<source>How much persons</source>
+				<source>Mögliche Personenzahl</source>
 			</trans-unit>
 			<trans-unit id="route.description">
-				<source>route</source>
+				<source>Route</source>
 			</trans-unit>
 			<trans-unit id="returning.description">
 				<source>returning</source>
 			</trans-unit>
 			<trans-unit id="driver.description">
-				<source>driver</source>
+				<source>Fahrer_in</source>
 			</trans-unit>
 			<trans-unit id="destination.description">
-				<source>destination</source>
+				<source>Ziel</source>
 			</trans-unit>
 			<trans-unit id="start.description">
-				<source>start</source>
+				<source>Start</source>
 			</trans-unit>
 		</body>
 	</file>

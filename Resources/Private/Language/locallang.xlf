@@ -4,16 +4,16 @@
 		<header/>
 		<body>
 			<trans-unit id="tx_ride_domain_model_ride">
-				<source>Ride</source>
+				<source>Angebot</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.description">
-				<source>Description</source>
+				<source>Beschreibung</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.date">
-				<source>Date</source>
+				<source>Datum</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.space">
-				<source>Space</source>
+				<source>Mögliche Personenzahl</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.route">
 				<source>Route</source>
@@ -22,10 +22,10 @@
 				<source>Returning</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.driver">
-				<source>Driver</source>
+				<source>Fahrer_in</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.destination">
-				<source>Destination</source>
+				<source>Ziel</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.start">
 				<source>Start</source>
@@ -34,28 +34,28 @@
 				<source>Fe User</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_address">
-				<source>Address</source>
+				<source>Adresse</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_address.name">
 				<source>Name</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_address.street">
-				<source>Street</source>
+				<source>Straße</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_address.street_number">
-				<source>Street Number</source>
+				<source>Hausnummer</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_address.city">
-				<source>City</source>
+				<source>Ort</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_address.zip">
-				<source>Zip</source>
+				<source>PLZ</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_address.country">
-				<source>Country</source>
+				<source>Land</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_address.state">
-				<source>State</source>
+				<source>Bundesland</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_address.latitude">
 				<source>Latitude</source>
