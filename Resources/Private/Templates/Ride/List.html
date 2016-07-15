@@ -13,7 +13,7 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-<h1>Rides for {destination.name}</h1>
+<h1>Mitfahrgelegenheiten nach {destination.name}</h1>
 
 <f:flashMessages />
 <div id="map" style="width: 490px; height: 620px"></div>
@@ -55,19 +55,43 @@ Otherwise your changes will be overwritten the next time you save the extension 
 </script>
 
 <f:if condition="{rides}">
-	<ul>
+<p>
+	<table class="table table-striped">
+	    <thead>
+                <tr>
+                  <th>Beschreibung</th>
+                  <th>Start</th>
+                  <th>Datum</th>
+                  <th>#</th>
+                </tr>
+            </thead>
+            <tbody>
 	<f:for each="{rides}" as="ride">
-		<li>
-			<f:link.action action="show" arguments="{ride : ride}"> {ride.description}</f:link.action> ({ride.start.city})
-			<f:render partial="ButtonsEditDelete" arguments="{ride : ride, feUser:feUser}" />
-			{ride.date -> f:format.date()}
+		
+		 
+            <tr>
+			 <td>
+			     {ride.description}
+			 </td>
+			 <td>
+			     {ride.start.city}
+			 </td>
+			 <td>
+			     {ride.date -> f:format.date()}
+			 </td>
+			 <td>
+			     <f:link.action action="show" arguments="{ride : ride}"><span class="btn btn-small">Eintrag ansehen</span> </f:link.action>
+			 </td></tr>
+			 </tbody>
+			<f:render partial="ButtonsEditDelete" arguments="{ride : ride, feUser:feUser}" />	
 		</li>
 	</f:for>
-	</ul>
+	</table>
+</p>
 </f:if>
 <f:if condition="{feUser}">
 	<f:then>
-		<f:link.action action="new">New Ride</f:link.action>
+		<f:link.action action="new"><span class="btn">Neuen Eintrag erstellen</span></f:link.action>
 	</f:then>
 	<f:else>
 		<f:if condition="{settings.registrationPid}">

@@ -13,7 +13,7 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-<h1>New Ride</h1>
+<h1>Neue Mitfahrgelegenheit anlegen</h1>
 
 <f:flashMessages />
 
@@ -21,6 +21,6 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <f:form action="create"  name="newRide" object="{newRide}">
 <f:render partial="Ride/FormFields" arguments="{driver:driver, now:now}" />
-	<f:form.submit value="Create new" />
+	<p><f:form.submit value="Eintrag erstellen" class="btn btn-success"/></p>
 </f:form>
 </f:section>

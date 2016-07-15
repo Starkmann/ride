@@ -4,25 +4,25 @@
 		<header/>
 		<body>
 			<trans-unit id="name.description">
-				<source>name</source>
+				<source>Name</source>
 			</trans-unit>
 			<trans-unit id="street.description">
-				<source>street</source>
+				<source>Straße</source>
 			</trans-unit>
 			<trans-unit id="street_number.description">
-				<source>streetNumber</source>
+				<source>Hausnummer</source>
 			</trans-unit>
 			<trans-unit id="city.description">
-				<source>city</source>
+				<source>Ort</source>
 			</trans-unit>
 			<trans-unit id="zip.description">
-				<source>zip</source>
+				<source>PLZ</source>
 			</trans-unit>
 			<trans-unit id="country.description">
-				<source>country</source>
+				<source>Land</source>
 			</trans-unit>
 			<trans-unit id="state.description">
-				<source>state</source>
+				<source>Bundesland</source>
 			</trans-unit>
 			<trans-unit id="latitude.description">
 				<source>latitude</source>
