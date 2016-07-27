@@ -2,7 +2,7 @@
 return array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:ride/Resources/Private/Language/locallang_db.xlf:tx_ride_domain_model_address',
-		'label' => 'name',
+		'label' => 'city',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
@@ -23,10 +23,10 @@ return array(
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('ride') . 'Resources/Public/Icons/tx_ride_domain_model_address.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, street, street_number, city, zip, country, state, latitude, longitude',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, street, street_number, city, zip, country, state, latitude, longitude',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, street, street_number, city, zip, country, state, latitude, longitude, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, street, street_number, city, zip, country, state, latitude, longitude, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
