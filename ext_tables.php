@@ -18,9 +18,6 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignat
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_ride_domain_model_ride', 'EXT:ride/Resources/Private/Language/locallang_csh_tx_ride_domain_model_ride.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_ride_domain_model_ride');
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_ride_domain_model_address', 'EXT:ride/Resources/Private/Language/locallang_csh_tx_ride_domain_model_address.xlf');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_ride_domain_model_address');
-
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::makeCategorizable(
     $_EXTKEY,
     'tx_ride_domain_model_ride'

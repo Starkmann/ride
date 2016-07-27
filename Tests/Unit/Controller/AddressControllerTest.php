@@ -71,7 +71,7 @@ class AddressControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function showActionAssignsTheGivenAddressToView()
 	{
-		$address = new \Eike\Ride\Domain\Model\Address();
+		$address = new \Undkonsorten\Addressmgmt\Domain\Model\Address();
 
 		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
 		$this->inject($this->subject, 'view', $view);
@@ -85,7 +85,7 @@ class AddressControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function createActionAddsTheGivenAddressToAddressRepository()
 	{
-		$address = new \Eike\Ride\Domain\Model\Address();
+		$address = new \Undkonsorten\Addressmgmt\Domain\Model\Address();
 
 		$addressRepository = $this->getMock('Eike\\Ride\\Domain\\Repository\\AddressRepository', array('add'), array(), '', FALSE);
 		$addressRepository->expects($this->once())->method('add')->with($address);
@@ -99,7 +99,7 @@ class AddressControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function editActionAssignsTheGivenAddressToView()
 	{
-		$address = new \Eike\Ride\Domain\Model\Address();
+		$address = new \Undkonsorten\Addressmgmt\Domain\Model\Address();
 
 		$view = $this->getMock('TYPO3\\CMS\\Extbase\\Mvc\\View\\ViewInterface');
 		$this->inject($this->subject, 'view', $view);
@@ -113,7 +113,7 @@ class AddressControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function updateActionUpdatesTheGivenAddressInAddressRepository()
 	{
-		$address = new \Eike\Ride\Domain\Model\Address();
+		$address = new \Undkonsorten\Addressmgmt\Domain\Model\Address();
 
 		$addressRepository = $this->getMock('Eike\\Ride\\Domain\\Repository\\AddressRepository', array('update'), array(), '', FALSE);
 		$addressRepository->expects($this->once())->method('update')->with($address);
@@ -127,7 +127,7 @@ class AddressControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function deleteActionRemovesTheGivenAddressFromAddressRepository()
 	{
-		$address = new \Eike\Ride\Domain\Model\Address();
+		$address = new \Undkonsorten\Addressmgmt\Domain\Model\Address();
 
 		$addressRepository = $this->getMock('Eike\\Ride\\Domain\\Repository\\AddressRepository', array('remove'), array(), '', FALSE);
 		$addressRepository->expects($this->once())->method('remove')->with($address);

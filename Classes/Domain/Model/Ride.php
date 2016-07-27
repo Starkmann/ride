@@ -79,14 +79,14 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * destination
      *
-     * @var \Eike\Ride\Domain\Model\Address
+     * @var \Undkonsorten\Addressmgmt\Domain\Model\Address\Location
      */
     protected $destination = null;
     
     /**
      * start
      *
-     * @var \Eike\Ride\Domain\Model\Address
+     * @var \Undkonsorten\Addressmgmt\Domain\Model\Address\Location
      */
     protected $start = null;
     
@@ -220,7 +220,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the destination
      *
-     * @return \Eike\Ride\Domain\Model\Address $destination
+     * @return \Undkonsorten\Addressmgmt\Domain\Model\Address\Location $destination
      */
     public function getDestination()
     {
@@ -230,10 +230,10 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the destination
      *
-     * @param \Eike\Ride\Domain\Model\Address $destination
+     * @param \Undkonsorten\Addressmgmt\Domain\Model\Address\Location $destination
      * @return void
      */
-    public function setDestination(\Eike\Ride\Domain\Model\Address $destination)
+    public function setDestination(\Undkonsorten\Addressmgmt\Domain\Model\Address\Location $destination)
     {
         $this->destination = $destination;
     }
@@ -241,7 +241,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the start
      *
-     * @return \Eike\Ride\Domain\Model\Address $start
+     * @return \Undkonsorten\Addressmgmt\Domain\Model\Address\Location $start
      */
     public function getStart()
     {
@@ -251,10 +251,10 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the start
      *
-     * @param \Eike\Ride\Domain\Model\Address $start
+     * @param \Undkonsorten\Addressmgmt\Domain\Model\Address\Location $start
      * @return void
      */
-    public function setStart(\Eike\Ride\Domain\Model\Address $start)
+    public function setStart(\Undkonsorten\Addressmgmt\Domain\Model\Address\Location $start)
     {
         $this->start = $start;
     }

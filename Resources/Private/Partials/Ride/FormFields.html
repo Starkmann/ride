@@ -32,7 +32,16 @@
 
 <div class="controls controls-row">
     <label for="street">
-        <f:translate key="tx_ride_domain_model_address.street" /> / <f:translate key="tx_ride_domain_model_address.street_number" />
+        <f:translate key="tx_addressmgmt_domain_model_address.name" /> 
+    </label>
+    <div class="controls">
+        <f:form.textfield property="start.name" class="span6"/>
+    </div>
+</div>
+
+<div class="controls controls-row">
+    <label for="street">
+        <f:translate key="tx_addressmgmt_domain_model_address.street" /> / <f:translate key="tx_addressmgmt_domain_model_address.street_number" />
     </label>
     <div class="controls">
         <f:form.textfield property="start.street" class="span6"/> <f:form.textfield property="start.streetNumber" class="span2"/>
@@ -41,7 +50,7 @@
 
 <div class="controls controls-row">
     <label for="ZIP and city">
-        <f:translate key="tx_ride_domain_model_address.zip" /> / <f:translate key="tx_ride_domain_model_address.city"/>
+        <f:translate key="tx_addressmgmt_domain_model_address.zip" /> / <f:translate key="tx_addressmgmt_domain_model_address.city"/>
     </label>
     <div class="controls">
         <f:form.textfield property="start.zip" class="span2"/><f:form.textfield property="start.city" class="span6"/>
@@ -50,7 +59,7 @@
 
 <div class="controls controls-row">
     <label for="country">
-	   <f:translate key="tx_ride_domain_model_address.country" /> / <f:translate key="tx_ride_domain_model_address.state" />
+	   <f:translate key="tx_addressmgmt_domain_model_address.country" /> / <f:translate key="tx_addressmgmt_domain_model_address.state" />
     </label>
     <div class="controls">
         <f:form.textfield property="start.country" class="span4"/><f:form.textfield property="start.state" class="span4"/>
@@ -60,7 +69,7 @@
 
 <div class="controls controls-row">
     <label for="lat">
-	    <f:translate key="tx_ride_domain_model_address.latitude" /> / <f:translate key="tx_ride_domain_model_address.longitude" />
+	    <f:translate key="tx_addressmgmt_domain_model_address.latitude" /> / <f:translate key="tx_addressmgmt_domain_model_address.longitude" />
     </label>
     <div class="controls">
         <f:form.textfield property="start.latitude" class="span4"/> <f:form.textfield property="start.longitude" class="span4"/>
@@ -76,40 +85,40 @@
 	<f:else>
 		<h3>Destination</h3>
 		<label for="space">
-			<f:translate key="tx_ride_domain_model_address.name" />
+			<f:translate key="tx_addressmgmt_domain_model_address.name" />
 		</label><br />
 			<f:form.textfield property="destination.name" /><br />
 		<label for="space">
-			<f:translate key="tx_ride_domain_model_address.street" />
+			<f:translate key="tx_addressmgmt_domain_model_address.street" />
 		</label><br />
 		<f:form.textfield property="destination.street" />
 		<label for="space">
-			<f:translate key="tx_ride_domain_model_address.street_number" />
+			<f:translate key="tx_addressmgmt_domain_model_address.street_number" />
 		</label>
 		<f:form.textfield property="destination.streetNumber" /> <br />
 		<label for="space">
-			<f:translate key="tx_ride_domain_model_address.city" />
+			<f:translate key="tx_addressmgmt_domain_model_address.city" />
 		
 		</label><br />
 		<f:form.textfield property="destination.city" /> <br />
 		<label for="space">
-			<f:translate key="tx_ride_domain_model_address.zip" />
+			<f:translate key="tx_addressmgmt_domain_model_address.zip" />
 		</label><br />
 		<f:form.textfield property="destination.zip" /> <br />
 		<label for="space">
-			<f:translate key="tx_ride_domain_model_address.country" />
+			<f:translate key="tx_addressmgmt_domain_model_address.country" />
 		</label><br />
 		<f:form.textfield property="destination.country" /> <br />
 		<label for="space">
-			<f:translate key="tx_ride_domain_model_address.state" />
+			<f:translate key="tx_addressmgmt_domain_model_address.state" />
 		</label><br />
 		<f:form.textfield property="destination.state" /> <br />
 		<label for="space">
-			<f:translate key="tx_ride_domain_model_address.latitude" />
+			<f:translate key="tx_addressmgmt_domain_model_address.latitude" />
 		</label><br />
 		<f:form.textfield property="destination.latitude" />
 		<label for="space">
-			<f:translate key="tx_ride_domain_model_address.latitude" />
+			<f:translate key="tx_addressmgmt_domain_model_address.latitude" />
 		</label>
 		<f:form.textfield property="destination.longitude" /><br />
 	</f:else>

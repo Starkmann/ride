@@ -40,10 +40,11 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @inject
      */
     protected $rideRepository = NULL;
+    
     /**
-     * addressRepository
+     * rideRepository
      *
-     * @var \Eike\Ride\Domain\Repository\AddressRepository
+     * @var \Undkonsorten\Addressmgmt\Domain\Repository\AddressRepository
      * @inject
      */
     protected $addressRepository = NULL;
@@ -58,7 +59,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     
     /**
      *
-     * @var \Eike\Ride\Service\Address
+     * @var \Undkonsorten\Addressmgmt\Service\Address
      * @inject
      */
     protected $addressService = NULL;
@@ -88,6 +89,9 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function listAction()
     {
+    	if(is_null($this->addressRepository->findByUid($this->settings['destination']))){
+    		throw new \Exception('Please specify a destination in backend plugin',1469627469);
+    	}
         $rides = $this->rideRepository->findAll();
         
         $this->view->assign('feUser', $this->access->getLoggedInFrontendUser());

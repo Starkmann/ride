@@ -30,7 +30,11 @@
 							<label>Ziel</label>
 							<config>
 							  <type>select</type>
-							  <foreign_table>tx_ride_domain_model_address</foreign_table>
+							  <size>10</size>
+							  <maxitem>1</maxitem>
+							  <minitem>1</minitem>
+							  <renderType>selectMultipleSideBySide</renderType>
+							  <foreign_table>tx_addressmgmt_domain_model_address</foreign_table>
 							</config>
 						</TCEforms>
 					</settings.destination>

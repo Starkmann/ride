@@ -27,7 +27,7 @@ namespace Eike\Ride\Tests\Unit\Domain\Model;
  ***************************************************************/
 
 /**
- * Test case for class \Eike\Ride\Domain\Model\Address.
+ * Test case for class \Undkonsorten\Addressmgmt\Domain\Model\Address.
  *
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
@@ -37,13 +37,13 @@ namespace Eike\Ride\Tests\Unit\Domain\Model;
 class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
 	/**
-	 * @var \Eike\Ride\Domain\Model\Address
+	 * @var \Undkonsorten\Addressmgmt\Domain\Model\Address
 	 */
 	protected $subject = NULL;
 
 	public function setUp()
 	{
-		$this->subject = new \Eike\Ride\Domain\Model\Address();
+		$this->subject = new \Undkonsorten\Addressmgmt\Domain\Model\Address();
 	}
 
 	public function tearDown()

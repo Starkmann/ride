@@ -237,7 +237,7 @@ class RideTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function setDestinationForAddressSetsDestination()
 	{
-		$destinationFixture = new \Eike\Ride\Domain\Model\Address();
+		$destinationFixture = new \Undkonsorten\Addressmgmt\Domain\Model\Address();
 		$this->subject->setDestination($destinationFixture);
 
 		$this->assertAttributeEquals(
@@ -263,7 +263,7 @@ class RideTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function setStartForAddressSetsStart()
 	{
-		$startFixture = new \Eike\Ride\Domain\Model\Address();
+		$startFixture = new \Undkonsorten\Addressmgmt\Domain\Model\Address();
 		$this->subject->setStart($startFixture);
 
 		$this->assertAttributeEquals(

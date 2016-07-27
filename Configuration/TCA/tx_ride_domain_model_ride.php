@@ -212,7 +212,7 @@ return array(
 			'config' => array(
 				'type' => 'select',
 				'renderType' => 'selectSingle',
-				'foreign_table' => 'tx_ride_domain_model_address',
+				'foreign_table' => 'tx_addressmgmt_domain_model_address',
 				'minitems' => 0,
 				'maxitems' => 1,
 			),
@@ -223,7 +223,7 @@ return array(
 			'config' => array(
 				'type' => 'select',
 				'renderType' => 'selectSingle',
-				'foreign_table' => 'tx_ride_domain_model_address',
+				'foreign_table' => 'tx_addressmgmt_domain_model_address',
 				'minitems' => 0,
 				'maxitems' => 1,
 			),
