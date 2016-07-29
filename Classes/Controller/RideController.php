@@ -83,6 +83,26 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     }
     
     /**
+     * Initializes the current action
+     *
+     * @return void
+     */
+    public function initializeAction() {
+    	// Only do this in Frontend Context
+    	if (!empty($GLOBALS['TSFE']) && is_object($GLOBALS['TSFE'])) {
+    		// We only want to set the tag once in one request, so we have to cache that statically if it has been done
+    		static $cacheTagsSet = FALSE;
+    
+    		if (!$cacheTagsSet) {
+    			/** @var $typoScriptFrontendController \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController  */
+    			$typoScriptFrontendController = $GLOBALS['TSFE'];
+    			$typoScriptFrontendController->addCacheTags(array($this->request->getControllerExtensionKey()));
+    			$cacheTagsSet = TRUE;
+    		}
+    	}
+    }
+    
+    /**
      * action list
      *
      * @return void
@@ -135,6 +155,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     	$this->addFlashMessage('The object was created.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
     	$this->addressService->updateCoordinates($newRide->getStart());
         $this->rideRepository->add($newRide);
+        $this->flushCachesByExtKeyTag();
         $this->redirect('list');
     }
     
@@ -165,6 +186,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->addFlashMessage('The object was updated.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
         $this->addressService->updateCoordinates($ride->getStart());
         $this->rideRepository->update($ride);
+        $this->flushCachesByExtKeyTag();
         $this->redirect('list');
     }
     
@@ -181,7 +203,16 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     	}
         $this->addFlashMessage('The object was deleted.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
         $this->rideRepository->remove($ride);
+        $this->flushCachesByExtKeyTag();
         $this->redirect('list');
     }
 
+    /**
+     * Flush all caches with this extension key as tag
+     */
+    protected function flushCachesByExtKeyTag(){
+    	/*@var $cacheManager \TYPO3\CMS\Core\Cache\CacheManager */
+    	$cacheManager = $this->objectManager->get('TYPO3\CMS\Core\Cache\CacheManager');
+    	$cacheManager->flushCachesByTag($this->request->getControllerExtensionKey());
+    }
 }
