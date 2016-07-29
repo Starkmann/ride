@@ -71,7 +71,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * driver
      *
-     * @var \Eike\Ride\Domain\Model\FeUser
+     * @var \In2\Femanager\Domain\Model\User
      * 
      */
     protected $driver = null;
@@ -199,7 +199,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the driver
      *
-     * @return \Eike\Ride\Domain\Model\FeUser $driver
+     * @return \In2\Femanager\Domain\Model\User $driver
      */
     public function getDriver()
     {
@@ -209,7 +209,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the driver
      *
-     * @param \Eike\Ride\Domain\Model\FeUser $driver
+     * @param \In2\Femanager\Domain\Model\User $driver
      * @return void
      */
     public function setDriver($driver)

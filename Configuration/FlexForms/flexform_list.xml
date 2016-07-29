@@ -109,15 +109,6 @@
 					      </config>
 					    </TCEforms>
 					  </settings.mapWidth>
-						<settings.mapCenter>
-					    <TCEforms>
-					      <label>Map Center (Default Mittelpunkt BRD). Order: Lat, Lon</label>
-					      <config>
-						<type>input</type>
-						<default>51.8, 10.25</default>
-					      </config>
-					    </TCEforms>
-					  </settings.mapCenter>
 						<settings.mapHeight>
 					    <TCEforms>
 					      <label>Map Height (Default: 800px)</label>

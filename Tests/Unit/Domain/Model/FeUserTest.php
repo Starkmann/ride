@@ -27,7 +27,7 @@ namespace Eike\Ride\Tests\Unit\Domain\Model;
  ***************************************************************/
 
 /**
- * Test case for class \Eike\Ride\Domain\Model\FeUser.
+ * Test case for class \In2\Femanager\Domain\Model\User.
  *
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
@@ -37,13 +37,13 @@ namespace Eike\Ride\Tests\Unit\Domain\Model;
 class FeUserTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
 	/**
-	 * @var \Eike\Ride\Domain\Model\FeUser
+	 * @var \In2\Femanager\Domain\Model\User
 	 */
 	protected $subject = NULL;
 
 	public function setUp()
 	{
-		$this->subject = new \Eike\Ride\Domain\Model\FeUser();
+		$this->subject = new \In2\Femanager\Domain\Model\User();
 	}
 
 	public function tearDown()

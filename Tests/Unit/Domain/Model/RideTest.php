@@ -182,7 +182,7 @@ class RideTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function setDriverForObjectStorageContainingFeUserSetsDriver()
 	{
-		$driver = new \Eike\Ride\Domain\Model\FeUser();
+		$driver = new \In2\Femanager\Domain\Model\User();
 		$objectStorageHoldingExactlyOneDriver = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$objectStorageHoldingExactlyOneDriver->attach($driver);
 		$this->subject->setDriver($objectStorageHoldingExactlyOneDriver);
@@ -199,7 +199,7 @@ class RideTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function addDriverToObjectStorageHoldingDriver()
 	{
-		$driver = new \Eike\Ride\Domain\Model\FeUser();
+		$driver = new \In2\Femanager\Domain\Model\User();
 		$driverObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
 		$driverObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($driver));
 		$this->inject($this->subject, 'driver', $driverObjectStorageMock);
@@ -212,7 +212,7 @@ class RideTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function removeDriverFromObjectStorageHoldingDriver()
 	{
-		$driver = new \Eike\Ride\Domain\Model\FeUser();
+		$driver = new \In2\Femanager\Domain\Model\User();
 		$driverObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
 		$driverObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($driver));
 		$this->inject($this->subject, 'driver', $driverObjectStorageMock);
