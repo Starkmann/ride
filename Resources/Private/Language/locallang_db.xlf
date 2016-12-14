@@ -66,6 +66,12 @@
 			<trans-unit id="tx_addressmgmt_domain_model_address.longitude">
 				<source>Longitude</source>
 			</trans-unit>
+			
+			<trans-unit id="flexform.storage_folder">
+				<source>Storage folder</source>
+			</trans-unit>
+			
+			
 		</body>
 	</file>
 </xliff>
