@@ -26,7 +26,7 @@ namespace Eike\Ride\Service;
 /**
  *
  *
- * @package Wall
+ * @package Ride
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
@@ -37,7 +37,7 @@ class Access  {
 	/**
 	 * fronted user repository
 	 *
-	 * @var \Eike\Ride\Domain\Repository\FeUserRepository
+	 * @var \TYPO3\CMS\Extbase\Domain\Repository\FrontendUserRepository
 	 * @inject
 	 */
 	protected $userRepository;
