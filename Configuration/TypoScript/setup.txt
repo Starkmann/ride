@@ -11,13 +11,14 @@ plugin.tx_ride_list {
 }
 
 page.includeCSS.tx_ride_leaflet = EXT:ride/Resources/Public/Css/leaflet.css
+page.includeCSS.tx_ride_leaflet_routing = EXT:ride/Resources/Public/Css/leaflet-routing-machine.css
+page.includeCSS.tx_ride_datetimepicker = EXT:ride/Resources/Public/Css/jquery.datetimepicker.min.css
+
 page.includeJS.tx_ride_leaflet = EXT:ride/Resources/Public/Scripts/leaflet.js
 page.includeJS.tx_ride_leaflet_routing = EXT:ride/Resources/Public/Scripts/leaflet-routing-machine.js
-page.includeCSS.tx_ride_leaflet_routing = EXT:ride/Resources/Public/Css/leaflet-routing-machine.css
-
 page.includeJSFooter.tx_ride_datetimepicker = EXT:ride/Resources/Public/Scripts/jquery.datetimepicker.full.js
 page.includeJSFooter.tx_ride_datetimepicker_init = EXT:ride/Resources/Public/Scripts/DatePicker.js
-page.includeCSS.tx_ride_datetimepicker = EXT:ride/Resources/Public/Css/jquery.datetimepicker.min.css
+
 
 plugin.tx_ride._CSS_DEFAULT_STYLE (
 	textarea.f3-form-error {
