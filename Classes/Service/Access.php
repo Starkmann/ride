@@ -37,7 +37,7 @@ class Access  {
 	/**
 	 * fronted user repository
 	 *
-	 * @var \In2\Femanager\Domain\Repository\UserRepository
+	 * @var \Eike\Ride\Domain\Repository\FeUserRepository
 	 * @inject
 	 */
 	protected $userRepository;
@@ -45,7 +45,7 @@ class Access  {
 	/**
 	 * Return logged in frontend user, if any, NULL otherwise
 	 *
-	 * @return \In2\Femanager\Domain\Model\User
+	 * @return \TYPO3\CMS\Extbase\Domain\Model\FrontendUser
 	 */
 	public function getLoggedInFrontendUser() {
 		$frontendUser = NULL;
@@ -59,7 +59,7 @@ class Access  {
 	/**
 	 * 
 	 * @param \Eike\Ride\Domain\Model\Ride $ride
-	 * @param \In2\Femanager\Domain\Model\User $feUser
+	 * @param \TYPO3\CMS\Extbase\Domain\Model\FrontendUser $feUser
 	 * @return boolean
 	 */
 	public function mayEditOrDelete($ride, $feUser) {

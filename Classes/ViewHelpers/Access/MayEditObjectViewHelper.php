@@ -36,10 +36,10 @@ class MayEditObjectViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractC
 	/**
 	 * 
 	 * @param \Eike\Ride\Domain\Model\Ride $ride
-	 * @param \In2\Femanager\Domain\Model\User $user
+	 * @param \TYPO3\CMS\Extbase\Domain\Model\FrontendUser $user
 	 * @return string
 	 */
-	public function render($ride, \In2\Femanager\Domain\Model\User $user = NULL){
+	public function render($ride, \TYPO3\CMS\Extbase\Domain\Model\FrontendUser $user = NULL){
 		if($ride->getDriver() == $user) {
 			return $this->renderThenChild();
 		} else {
