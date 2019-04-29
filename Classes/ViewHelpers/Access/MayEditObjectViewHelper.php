@@ -1,12 +1,13 @@
 <?php
 namespace Eike\Ride\ViewHelpers\Access;
 
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+use TYPO3\CMS\Extbase\Domain\Model\FrontendUser;
+use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractConditionViewHelper;
 
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2016 "Eike Starkmann <eike.starkmann@posteo.de>"
+ *  (c) 2013 "Felix Althaus <felix.althaus@undkonsorten.com>"
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -33,21 +34,30 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class MayEditObjectViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractConditionViewHelper {
-	
-	/**
-	 * 
-	 * @param \Eike\Ride\Domain\Model\Ride $ride
-	 * @param \TYPO3\CMS\Extbase\Domain\Model\FrontendUser $user
-	 * @return string
-	 */
-	public function render($ride, \TYPO3\CMS\Extbase\Domain\Model\FrontendUser $user = NULL){
-		if($ride->getDriver() == $user) {
-			return $this->renderThenChild();
-		} else {
-			return $this->renderElseChild();
-		}
-	}
+class MayEditObjectViewHelper extends AbstractConditionViewHelper
+{
+    /**
+     * Arguments Initialization
+     */
+    public function initializeArguments()
+    {
+        $this->registerArgument('object', 'object', 'The wall to evaluate', TRUE);
+        $this->registerArgument('user', FrontendUser::class, 'The user to evaluate', TRUE);
+    }
+
+    /**
+     * @param null $arguments
+     * @return bool
+     */
+    static protected function evaluateCondition($arguments = null)
+    {
+        $object = $arguments['object'];
+        /** @var FrontendUser $user */
+        $user = $arguments['user'];
+
+        /** @noinspection PhpUndefinedMethodInspection */
+        return $object->getDriver() === $user;
+    }
 
 }
-?>
+

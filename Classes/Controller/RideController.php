@@ -59,7 +59,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     
     /**
      *
-     * @var \Undkonsorten\Addressmgmt\Service\Address
+     * @var \Undkonsorten\Addressmgmt\Service\AddressLocatorService
      * @inject
      */
     protected $addressService = NULL;
@@ -117,6 +117,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->view->assign('feUser', $this->access->getLoggedInFrontendUser());
         $this->view->assign('rides', $rides);
         $this->view->assign('destination', $this->addressRepository->findByUid($this->settings['destination']));
+        $this->view->assign('contentUid', $this->configurationManager->getContentObject()->data['uid']);
     }
     
     /**

@@ -1,21 +1,38 @@
 
-plugin.tx_ride_list {
+plugin.tx_ride {
 	view {
-		templateRootPaths.0 = {$plugin.tx_ride_list.view.templateRootPath}
-		partialRootPaths.0 = {$plugin.tx_ride_list.view.partialRootPath}
-		layoutRootPaths.0 = {$plugin.tx_ride_list.view.layoutRootPath}
+		templateRootPaths.0 = {$plugin.tx_ride.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_ride.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_ride.view.layoutRootPath}
 	}
 	persistence {
-		storagePid = {$plugin.tx_ride_list.persistence.storagePid}
+		storagePid = {$plugin.tx_ride.persistence.storagePid}
+	}
+	settings{
+	    mapConfiguration {
+            latitude = {$plugin.tx_ride.settings.mapConfiguration.latitude}
+            longitude = {$plugin.tx_ride.settings.mapConfiguration.longitude}
+            zoom = {$plugin.tx_ride.settings.mapConfiguration.zoom}
+            #map padding in px-units
+            padding = {$plugin.tx_ride.settings.mapConfiguration.padding}
+        }
+        tileLayerConfiguration {
+            urlTemplate = {$plugin.tx_ride.settings.tileLayerConfiguration.urlTemplate}
+            options {
+                id = {$plugin.tx_ride.settings.tileLayerConfiguration.options.id}
+                accessToken = {$plugin.tx_ride.settings.tileLayerConfiguration.options.accessToken}
+                attribution = {$plugin.tx_ride.settings.tileLayerConfiguration.options.attribution}
+            }
+        }
 	}
 }
 
-page.includeCSS.tx_ride_leaflet = EXT:ride/Resources/Public/Css/leaflet.css
-page.includeCSS.tx_ride_leaflet_routing = EXT:ride/Resources/Public/Css/leaflet-routing-machine.css
+#page.includeCSS.tx_ride_leaflet = EXT:ride/Resources/Public/Css/leaflet.css
+#page.includeCSS.tx_ride_leaflet_routing = EXT:ride/Resources/Public/Css/leaflet-routing-machine.css
 page.includeCSS.tx_ride_datetimepicker = EXT:ride/Resources/Public/Css/jquery.datetimepicker.min.css
 
-page.includeJS.tx_ride_leaflet = EXT:ride/Resources/Public/Scripts/leaflet.js
-page.includeJS.tx_ride_leaflet_routing = EXT:ride/Resources/Public/Scripts/leaflet-routing-machine.js
+#page.includeJS.tx_ride_leaflet = EXT:ride/Resources/Public/Scripts/leaflet.js
+#page.includeJS.tx_ride_leaflet_routing = EXT:ride/Resources/Public/Scripts/leaflet-routing-machine.js
 page.includeJSFooter.tx_ride_datetimepicker = EXT:ride/Resources/Public/Scripts/jquery.datetimepicker.full.js
 page.includeJSFooter.tx_ride_datetimepicker_init = EXT:ride/Resources/Public/Scripts/DatePicker.js
 

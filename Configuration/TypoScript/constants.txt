@@ -1,15 +1,42 @@
 
-plugin.tx_ride_list {
+plugin.tx_ride {
 	view {
-		# cat=plugin.tx_ride_list/file; type=string; label=Path to template root (FE)
+		# cat=plugin.tx_ride/file; type=string; label=Path to template root (FE)
 		templateRootPath = EXT:ride/Resources/Private/Templates/
-		# cat=plugin.tx_ride_list/file; type=string; label=Path to template partials (FE)
+		# cat=plugin.tx_ride/file; type=string; label=Path to template partials (FE)
 		partialRootPath = EXT:ride/Resources/Private/Partials/
-		# cat=plugin.tx_ride_list/file; type=string; label=Path to template layouts (FE)
+		# cat=plugin.tx_ride/file; type=string; label=Path to template layouts (FE)
 		layoutRootPath = EXT:ride/Resources/Private/Layouts/
 	}
 	persistence {
-		# cat=plugin.tx_ride_list//a; type=string; label=Default storage PID
+		# cat=plugin.tx_ride//a; type=string; label=Default storage PID
 		storagePid =
 	}
+	settings{
+	    mapConfiguration {
+            # cat=plugin.tx_ride/map/0010; type=string; label=Latitude: latitude of map center
+            latitude =
+            # cat=plugin.tx_ride/map/0020; type=string; label=Longitude: longitude of map center
+            longitude =
+            # cat=plugin.tx_ride/map/0040; type=int; label=Zoom: initial zoom of map
+            zoom =
+            # cat=plugin.tx_ride/map/0050; type=int; label=Padding: marker padding/spacing in px
+            padding = 30
+        }
+        tileLayerConfiguration {
+            # cat=plugin.tx_ride/tileServer/0060; type=string; label=URL Template: url template for tile server
+            urlTemplate = https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}
+            options {
+                # cat=plugin.tx_ride/tileServer/0070; type=string; label=ID: identification for tile server
+                id =
+                # cat=plugin.tx_ride/tileServer/0080; type=string; label=Access token
+                accessToken =
+                # cat=plugin.tx_ride/tileServer/0090; type=string; label=Max zoom: Maximum zoom level for tile server
+                maxZoom =
+                # cat=plugin.tx_ride/tileServer/0100; type=string; label=Attribution: Map attribution for the tile server
+                attribution = Insert attribution here!
+            }
+        }
+	}
+
 }
