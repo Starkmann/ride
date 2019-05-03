@@ -24,13 +24,13 @@ $EM_CONF[$_EXTKEY] = array(
 	'version' => '',
 	'constraints' => array(
 		'depends' => array(
-			'typo3' => '6.2.0-7.6.99',
-			'addressmgmt' => '1.0.0',
-			'femanager' => '1.5.2',
+			'typo3' => '8.7.0-8.7.99',
+			'addressmgmt' => '3.1.0-3.9.99'
 		),
 		'conflicts' => array(
 		),
 		'suggests' => array(
+            'femanager' => '1.5.2',
 		),
 	),
 );
