@@ -1,4 +1,6 @@
-{namespace u=Eike\Ride\ViewHelpers}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+			xmlns:e="http://typo3.org/ns/Eike\Ride\ViewHelpers"
+			data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
 
 This Template is responsible for creating a table of domain objects.
@@ -20,44 +22,46 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 
 <f:if condition="{rides}">
-	<f:render partial="Map/Show" arguments="{addresses:rides, contentUid:contentUid}"/>
-<p>
-	<table class="table table-striped">
-	    <thead>
-                <tr>
-                  <th>Beschreibung</th>
-                  <th>Start</th>
-                  <th>Datum</th>
-                  <th>#</th>
-                </tr>
-            </thead>
-            <tbody>
-	<f:for each="{rides}" as="ride">
-		
-		 
-            <tr>
-			 <td>
-			     {ride.description}
-			 </td>
-			 <td>
-			     {ride.start.city}
-			 </td>
-			 <td>
-			     {ride.date -> f:format.date(format:'Y/m/d H:i')}
-			 </td>
-			 <td>
-			     <f:link.action action="show" arguments="{ride : ride}"><span class="btn btn-small">Eintrag ansehen</span> </f:link.action>
-			 </td>
-			 <td>
-			 	<f:render partial="ButtonsEditDelete" arguments="{ride : ride, feUser:feUser}" />
-			 </td>
-			 </tr>
-			 </tbody>
-				
-		</li>
-	</f:for>
-	</table>
-</p>
+	<f:then>
+		<f:render partial="Map/Show" arguments="{addresses:rides, contentUid:contentUid}"/>
+		<p>
+		<table class="table table-striped">
+			<thead>
+			<tr>
+				<th>Beschreibung</th>
+				<th>Start</th>
+				<th>Datum</th>
+				<th>#</th>
+			</tr>
+			</thead>
+			<tbody>
+			<f:for each="{rides}" as="ride">
+				<tr>
+					<td>
+						{ride.description}
+					</td>
+					<td>
+						{ride.start.city}
+					</td>
+					<td>
+						{ride.date -> f:format.date(format:'Y/m/d H:i')}
+					</td>
+					<td>
+						<f:link.action action="show" arguments="{ride : ride}"><span class="btn btn-small">Eintrag ansehen</span> </f:link.action>
+					</td>
+					<td>
+						<f:render partial="ButtonsEditDelete" arguments="{ride : ride, feUser:feUser}" />
+					</td>
+				</tr>
+			</li>
+			</f:for>
+			</tbody>
+		</table>
+		</p>
+	</f:then>
+	<f:else>
+		The are currently no rides available
+	</f:else>
 </f:if>
 <f:if condition="{feUser}">
 	<f:then>
