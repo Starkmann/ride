@@ -16,16 +16,16 @@ $EM_CONF[$_EXTKEY] = array(
 	'category' => 'plugin',
 	'author' => 'Eike Starkmann',
 	'author_email' => 'eike.starkmann@posteo.de',
-	'state' => 'alpha',
+	'state' => 'beta',
 	'internal' => '',
 	'uploadfolder' => '0',
 	'createDirs' => '',
 	'clearCacheOnLoad' => 0,
-	'version' => '',
+	'version' => '1.0.0',
 	'constraints' => array(
 		'depends' => array(
 			'typo3' => '8.7.0-8.7.99',
-			'addressmgmt' => '3.1.0-3.9.99'
+			'addressmgmt' => '3.1.2-3.9.99'
 		),
 		'conflicts' => array(
 		),
