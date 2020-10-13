@@ -2,9 +2,8 @@
     "name": "eike/ride",
     "description": "Manages rides",
     "type": "typo3-cms-extension",
-    "version": "1.0.0",
     "replace": {
-        "ride": "self.version" 
+        "ride": "self.version"
     },
     "require": {
         "typo3/cms-core": "^8.7",
@@ -15,12 +14,12 @@
 	},
     "autoload": {
         "psr-4": {
-            "Eike\\Ride\\": "Classes" 
+            "Eike\\Ride\\": "Classes"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Eike\\Ride\\Tests": "Tests/" 
+            "Eike\\Ride\\Tests": "Tests/"
         }
     }
 }
