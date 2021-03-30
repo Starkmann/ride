@@ -1,7 +1,12 @@
 <?php
 namespace Eike\Ride\Controller;
 
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+use Eike\Ride\Domain\Repository\RideRepository;
+use Eike\Ride\Service\Access;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use Undkonsorten\Addressmgmt\Domain\Repository\AddressRepository;
+use Undkonsorten\Addressmgmt\Service\AddressLocatorService;
+
 /***************************************************************
  *
  *  Copyright notice
@@ -30,40 +35,49 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 /**
  * RideController
  */
-class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class RideController extends ActionController
 {
 
     /**
      * rideRepository
      *
-     * @var \Eike\Ride\Domain\Repository\RideRepository
-     * @inject
+     * @var RideRepository
      */
     protected $rideRepository = NULL;
-    
+
     /**
      * rideRepository
      *
-     * @var \Undkonsorten\Addressmgmt\Domain\Repository\AddressRepository
-     * @inject
+     * @var AddressRepository
      */
     protected $addressRepository = NULL;
-    
+
     /**
      * access
      *
-     * @var \Eike\Ride\Service\Access
-     * @inject
+     * @var Access
      */
     protected $access = NULL;
-    
+
     /**
      *
-     * @var \Undkonsorten\Addressmgmt\Service\AddressLocatorService
-     * @inject
+     * @var AddressLocatorService
      */
     protected $addressService = NULL;
-    
+
+    public function __construct(
+        RideRepository $rideRepository,
+        AddressRepository $addressRepository,
+        Access $access,
+        AddressLocatorService $addressLocatorService)
+    {
+        $this->rideRepository = $rideRepository;
+        $this->addressRepository =$addressRepository;
+        $this->access = $access;
+        $this->addressService = $addressLocatorService;
+
+    }
+
     public function initializeCreateAction() {
         if (isset($this->arguments['newRide'])) {
             $this->arguments['newRide']
@@ -72,7 +86,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter', \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'Y/m/d H:i');
         }
     }
-    
+
     public function initializeUpdateAction() {
         if (isset($this->arguments['ride'])) {
             $this->arguments['ride']
@@ -81,7 +95,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter', \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'Y/m/d H:i');
         }
     }
-    
+
     /**
      * Initializes the current action
      *
@@ -92,7 +106,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     	if (!empty($GLOBALS['TSFE']) && is_object($GLOBALS['TSFE'])) {
     		// We only want to set the tag once in one request, so we have to cache that statically if it has been done
     		static $cacheTagsSet = FALSE;
-    
+
     		if (!$cacheTagsSet) {
     			/** @var $typoScriptFrontendController \TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController  */
     			$typoScriptFrontendController = $GLOBALS['TSFE'];
@@ -101,7 +115,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     		}
     	}
     }
-    
+
     /**
      * action list
      *
@@ -113,13 +127,13 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     		throw new \Exception('Please specify a destination in backend plugin',1469627469);
     	}
         $rides = $this->rideRepository->findAll();
-        
+
         $this->view->assign('feUser', $this->access->getLoggedInFrontendUser());
         $this->view->assign('rides', $rides);
         $this->view->assign('destination', $this->addressRepository->findByUid($this->settings['destination']));
         $this->view->assign('contentUid', $this->configurationManager->getContentObject()->data['uid']);
     }
-    
+
     /**
      * action show
      *
@@ -130,7 +144,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     {
         $this->view->assign('ride', $ride);
     }
-    
+
     /**
      * action new
      *
@@ -144,7 +158,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     	$this->view->assign('now', new \DateTime());
     	$this->view->assign('driver', $this->access->getLoggedInFrontendUser());
     }
-    
+
     /**
      * action create
      *
@@ -159,12 +173,12 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->flushCachesByExtKeyTag();
         $this->redirect('list');
     }
-    
+
     /**
      * action edit
      *
      * @param \Eike\Ride\Domain\Model\Ride $ride
-     * @ignorevalidation $ride
+     * @TYPO3\CMS\Extbase\Annotation\IgnoreValidation  $ride
      * @return void
      */
     public function editAction(\Eike\Ride\Domain\Model\Ride $ride)
@@ -175,7 +189,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->view->assign('ride', $ride);
         $this->view->assign('driver', $this->access->getLoggedInFrontendUser());
     }
-    
+
     /**
      * action update
      *
@@ -190,7 +204,7 @@ class RideController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->flushCachesByExtKeyTag();
         $this->redirect('list');
     }
-    
+
     /**
      * action delete
      *

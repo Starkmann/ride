@@ -3,6 +3,7 @@ namespace Eike\Ride\ViewHelpers\Access;
 
 use TYPO3\CMS\Extbase\Domain\Model\FrontendUser;
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractConditionViewHelper;
+use Undkonsorten\Wall\Domain\Model\User;
 
 /***************************************************************
  *  Copyright notice
@@ -34,7 +35,7 @@ use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractConditionViewHelper;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class MayEditObjectViewHelper extends AbstractConditionViewHelper
+class MayEditObjectViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractConditionViewHelper
 {
     /**
      * Arguments Initialization
@@ -45,17 +46,11 @@ class MayEditObjectViewHelper extends AbstractConditionViewHelper
         $this->registerArgument('user', FrontendUser::class, 'The user to evaluate', TRUE);
     }
 
-    /**
-     * @param null $arguments
-     * @return bool
-     */
     static protected function evaluateCondition($arguments = null)
     {
         $object = $arguments['object'];
-        /** @var FrontendUser $user */
+        /** @var \TYPO3\CMS\Extbase\Domain\Model\FrontendUser $user */
         $user = $arguments['user'];
-
-        /** @noinspection PhpUndefinedMethodInspection */
         return $object->getDriver() === $user;
     }
 

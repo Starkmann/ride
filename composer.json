@@ -6,11 +6,11 @@
         "ride": "self.version"
     },
     "require": {
-        "typo3/cms-core": "^8.7",
-		"undkonsorten/addressmgmt":"^3.1"
+		"typo3/cms-core": "^10.4",
+		"undkonsorten/addressmgmt":"^5.0"
     },
 	"suggest": {
-		"in2code/femanager": "^4.2"
+		"in2code/femanager": "^6.1"
 	},
     "autoload": {
         "psr-4": {
@@ -21,6 +21,11 @@
         "psr-4": {
             "Eike\\Ride\\Tests": "Tests/"
         }
-    }
+    },
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "ride"
+		}
+	}
 }
 

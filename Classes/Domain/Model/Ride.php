@@ -38,58 +38,58 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var string
      */
     protected $description = '';
-    
+
     /**
      * Date
      *
      * @var \DateTime
      */
     protected $date = null;
-    
+
     /**
      * How much persons
      *
      * @var int
      */
     protected $space = 0;
-    
+
     /**
      * route
      *
      * @var string
      */
     protected $route = '';
-    
+
     /**
      * returning
      *
      * @var \Eike\Ride\Domain\Model\Ride
-     * @lazy
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $returning = null;
-    
+
     /**
      * driver
      *
      * @var \TYPO3\CMS\Extbase\Domain\Model\FrontendUser
-     * 
+     *
      */
     protected $driver = null;
-    
+
     /**
      * destination
      *
      * @var \Undkonsorten\Addressmgmt\Domain\Model\Address\Location
      */
     protected $destination = null;
-    
+
     /**
      * start
      *
      * @var \Undkonsorten\Addressmgmt\Domain\Model\Address\Location
      */
     protected $start = null;
-    
+
     /**
      * Returns the description
      *
@@ -99,7 +99,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->description;
     }
-    
+
     /**
      * Sets the description
      *
@@ -110,7 +110,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->description = $description;
     }
-    
+
     /**
      * Returns the date
      *
@@ -120,7 +120,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->date;
     }
-    
+
     /**
      * Sets the date
      *
@@ -131,7 +131,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->date = $date;
     }
-    
+
     /**
      * Returns the space
      *
@@ -141,7 +141,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->space;
     }
-    
+
     /**
      * Sets the space
      *
@@ -152,7 +152,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->space = $space;
     }
-    
+
     /**
      * Returns the returning
      *
@@ -162,7 +162,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->returning;
     }
-    
+
     /**
      * Sets the returning
      *
@@ -173,7 +173,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->returning = $returning;
     }
-    
+
     /**
      * __construct
      */
@@ -182,7 +182,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         //Do not remove the next line: It would break the functionality
         $this->initStorageObjects();
     }
-    
+
     /**
      * Initializes all ObjectStorage properties
      * Do not modify this method!
@@ -195,7 +195,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->driver = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
-    
+
     /**
      * Returns the driver
      *
@@ -205,7 +205,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->driver;
     }
-    
+
     /**
      * Sets the driver
      *
@@ -216,7 +216,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->driver = $driver;
     }
-    
+
     /**
      * Returns the destination
      *
@@ -226,7 +226,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->destination;
     }
-    
+
     /**
      * Sets the destination
      *
@@ -237,7 +237,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->destination = $destination;
     }
-    
+
     /**
      * Returns the start
      *
@@ -247,7 +247,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->start;
     }
-    
+
     /**
      * Sets the start
      *
@@ -258,7 +258,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->start = $start;
     }
-    
+
     /**
      * Returns the route
      *
@@ -268,7 +268,7 @@ class Ride extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->route;
     }
-    
+
     /**
      * Sets the route
      *

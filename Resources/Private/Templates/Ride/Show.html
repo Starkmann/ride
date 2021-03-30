@@ -15,40 +15,29 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:section name="main">
 <h1>Mitfahrgelegenheiten</h1>
 <f:flashMessages />
-<div id="map" style="width: 490px; height: 620px"></div>
-<script>
-	var map = L.map('map').setView([{settings.latitude}, {settings.longitude}], {settings.mapZoom});
-
-
-	<u:mapBoxTileLayer 
-		id="{settings.id}" 
-		accesssToken="{settings.accessToken}" 
-		maxZoom="{settings.maxZoom}" 
-		attribution="Map data &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"http://mapbox.com\">Mapbox</a>">
-	</u:mapBoxTileLayer> 
-	
-	<f:if condition="{ride.start.latitude}">
-		<f:if condition="{ride.start.longitude}">
-			
-		    L.Routing.control({
-			    waypoints: [
-			        L.latLng({ride.start.latitude}, {ride.start.longitude}),
-			        L.latLng({ride.destination.latitude}, {ride.destination.longitude})
-			    ],
-			    routeWhileDragging: false,
-			    show: false,
-			    showAlternatives : false,
-			    draggableWaypoints: false,
-			    addWaypoints: false
-			}).addTo(map);
-			L.Routing.Itinerary({
-				show: false
-			})
-			L.marker([{ride.start.latitude}, {ride.start.longitude}]).addTo(map)
-			.bindPopup('<b>{ride.driver.username} ({ride.start.name})</b>')
-		</f:if>
-	</f:if>
-</script>
+	<div class="map-wrap{f:if(condition:settings.showFilter,then:' map-with-filter')}" id="map{contentUid}-wrap">
+		<div class="semantic-map" id="map{contentUid}" data-semantic-map-fit-features="{f:if(condition: settings.mapConfiguration.fitBounds, then: 'true', else: 'false')}" data-semantic-map-enable-clustering="{f:if(condition: settings.mapConfiguration.clusterMarker, then: 'true', else: 'false')}" data-map-info-layer="#map{contentUid}-info-layer" data-map-wrap="#map{contentUid}-wrap" data-is-map="true" data-poi-list="#map{contentUid}-items" data-semantic-map-initial-center='[{settings.mapConfiguration.longitude}, {settings.mapConfiguration.latitude}]'  data-semantic-map-initial-zoom='{settings.mapConfiguration.zoom}' data-semantic-map-tile-url-template="{settings.tileLayerConfiguration -> u:tileLayerUrl()}">
+			<f:if condition="{settings.tileLayerConfiguration.options.attribution}">
+				<div class='semantic-map__attribution'>
+					<f:format.raw>{settings.tileLayerConfiguration.options.attribution}</f:format.raw>
+				</div>
+			</f:if>
+		</div>
+		<div class="map-info-layer" id="map{contentUid}-info-layer"></div>
+		<ul id="map{contentUid}-items" class="map-list-items filter-list-items semantic-map-context" style="display:none">
+			<f:if condition="{ride.start.latitude}">
+				<f:then>
+					<li class="filter-list-item list-item{f:if(condition:ride.images,then:' with-img', else: ' no-img')} semantic-map__feature semantic-map__geometry semantic-map__property " data-filter="{f:render(partial:'List/CategoryUids',arguments:'{address:address}')}"
+							data-semantic-map-geometry-type='Point'
+							data-semantic-map-geometry-coordinates="[{ride.start.longitude},{ride.start.latitude}]"
+							data-semantic-map-property-key='popup'
+							data-filter="{f:render(partial:'List/CategoryUids',arguments:'{address:address}')}">
+						<f:render partial="List/MapItem" arguments="{address: ride.start}" />
+					</li>
+				</f:then>
+			</f:if>
+		</ul>
+	</div>
 <f:render partial="Ride/Properties" arguments="{ride:ride}" />
 <f:link.action action="list"><span class="btn">Zurück zur Liste</span></f:link.action>&nbsp;
 <f:link.action action="new"><span class="btn">Neuen Eintrag erstellen</span></f:link.action>

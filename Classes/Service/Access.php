@@ -30,18 +30,24 @@ namespace Eike\Ride\Service;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
+
+use TYPO3\CMS\Extbase\Domain\Repository\FrontendUserRepository;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 class Access  {
-	
+
 	/**
 	 * fronted user repository
 	 *
 	 * @var \TYPO3\CMS\Extbase\Domain\Repository\FrontendUserRepository
-	 * @inject
+	 *
 	 */
 	protected $userRepository;
-	
+
+	public function injectUserRepository(FrontendUserRepository $frontendUserRepository)
+    {
+        $this->userRepository = $frontendUserRepository;
+    }
 	/**
 	 * Return logged in frontend user, if any, NULL otherwise
 	 *
@@ -55,9 +61,9 @@ class Access  {
 		}
 		return $frontendUser;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @param \Eike\Ride\Domain\Model\Ride $ride
 	 * @param \TYPO3\CMS\Extbase\Domain\Model\FrontendUser $feUser
 	 * @return boolean

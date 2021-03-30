@@ -4,15 +4,15 @@ if (!defined('TYPO3_MODE')) {
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'Eike.' . $_EXTKEY,
+	'Eike.ride',
 	'List',
 	array(
 		'Ride' => 'list, show, new, create, edit, update, delete',
-		
+
 	),
 	// non-cacheable actions
 	array(
 		'Ride' => 'new, create, delete, update',
-		
+
 	)
 );

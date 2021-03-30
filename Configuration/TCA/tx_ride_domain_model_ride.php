@@ -20,7 +20,7 @@ return array(
 			'endtime' => 'endtime',
 		),
 		'searchFields' => 'description,date,space,route,returning,driver,destination,start,',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('ride') . 'Resources/Public/Icons/tx_ride_domain_model_ride.gif'
+		'iconfile' => 'EXT:ride/Resources/Public/Icons/tx_ride_domain_model_ride.gif'
 	),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, description, date, space, route, returning, driver, destination, start',
@@ -32,7 +32,7 @@ return array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
-	
+
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -75,7 +75,7 @@ return array(
 				'max' => 255,
 			)
 		),
-	
+
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -228,6 +228,6 @@ return array(
 				'maxitems' => 1,
 			),
 		),
-		
+
 	),
 );

@@ -12,6 +12,7 @@
 							<label>Select function</label>
 							<config>
 								<type>select</type>
+								<renderType>selectSingle</renderType>
 								<items>
 									<numIndex index="0">
 										<numIndex index="0">List</numIndex>
@@ -56,8 +57,8 @@
 						<type>input</type>
 					      </config>
 					    </TCEforms>
-					 </settings.maxZoom>	
-					  
+					 </settings.maxZoom>
+
 					  <settings.mapZoom>
 					    <TCEforms>
 					      <label>Zoomstufe</label>
@@ -66,7 +67,7 @@
 					      </config>
 					    </TCEforms>
 					  </settings.mapZoom>
-					  
+
 					  <settings.latitude>
 					    <TCEforms>
 					      <label>Latitude</label>
@@ -75,7 +76,7 @@
 					      </config>
 					    </TCEforms>
 					  </settings.latitude>
-					  
+
 					  <settings.longitude>
 					    <TCEforms>
 					      <label>Longitude</label>
@@ -84,7 +85,7 @@
 					      </config>
 					    </TCEforms>
 					  </settings.longitude>
-					  
+
 					  <settings.accessToken>
 					    <TCEforms>
 					      <label>Access Token (mapbox)</label>
@@ -93,7 +94,7 @@
 					      </config>
 					    </TCEforms>
 					  </settings.accessToken>
-					  
+
 					  <settings.id>
 					    <TCEforms>
 					      <label>Id (mapbox)</label>
