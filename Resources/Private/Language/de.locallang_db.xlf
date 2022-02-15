@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2016-06-06T13:25:21Z" product-name="ride">
+		<header/>
+		<body>
+			<trans-unit id="tx_ride_domain_model_ride">
+				<source>Angebot</source>
+			</trans-unit>
+			<trans-unit id="tx_ride_domain_model_ride.description">
+				<source>Beschreibung</source>
+			</trans-unit>
+			<trans-unit id="tx_ride_domain_model_ride.date">
+				<source>Datum</source>
+			</trans-unit>
+			<trans-unit id="tx_ride_domain_model_ride.space">
+				<source>Space</source>
+			</trans-unit>
+			<trans-unit id="tx_ride_domain_model_ride.route">
+				<source>Route</source>
+			</trans-unit>
+			<trans-unit id="tx_ride_domain_model_ride.returning">
+				<source>Returning</source>
+			</trans-unit>
+			<trans-unit id="tx_ride_domain_model_ride.driver">
+				<source>Fahrer_in</source>
+			</trans-unit>
+			<trans-unit id="tx_ride_domain_model_ride.destination">
+				<source>Ziel</source>
+			</trans-unit>
+			<trans-unit id="tx_ride_domain_model_ride.start">
+				<source>Start</source>
+			</trans-unit>
+			<trans-unit id="tx_ride_domain_model_feuser">
+				<source>Fe User</source>
+			</trans-unit>
+			<trans-unit id="fe_users.tx_extbase_type.Tx_Ride_FeUser">
+				<source>Ride FeUser</source>
+			</trans-unit>
+			<trans-unit id="tx_addressmgmt_domain_model_address">
+				<source>Adresse</source>
+			</trans-unit>
+			<trans-unit id="tx_addressmgmt_domain_model_address.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_addressmgmt_domain_model_address.street">
+				<source>Straße</source>
+			</trans-unit>
+			<trans-unit id="tx_addressmgmt_domain_model_address.street_number">
+				<source>Hausnummer</source>
+			</trans-unit>
+			<trans-unit id="tx_addressmgmt_domain_model_address.city">
+				<source>Ort</source>
+			</trans-unit>
+			<trans-unit id="tx_addressmgmt_domain_model_address.zip">
+				<source>PLZ</source>
+			</trans-unit>
+			<trans-unit id="tx_addressmgmt_domain_model_address.country">
+				<source>Land</source>
+			</trans-unit>
+			<trans-unit id="tx_addressmgmt_domain_model_address.state">
+				<source>Bundesland</source>
+			</trans-unit>
+			<trans-unit id="tx_addressmgmt_domain_model_address.latitude">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_addressmgmt_domain_model_address.longitude">
+				<source>Longitude</source>
+			</trans-unit>
+			
+			<trans-unit id="flexform.storage_folder">
+				<source>Storage folder</source>
+			</trans-unit>
+			
+			
+		</body>
+	</file>
+</xliff>
