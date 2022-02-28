@@ -13,13 +13,13 @@
 				<source>Datum</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.space">
-				<source>Space</source>
+				<source>Platz</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.route">
 				<source>Route</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.returning">
-				<source>Returning</source>
+				<source>Rückfahrt</source>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.driver">
 				<source>Fahrer_in</source>
