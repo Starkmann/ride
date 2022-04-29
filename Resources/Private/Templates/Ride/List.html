@@ -15,7 +15,6 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-<h1>Mitfahrgelegenheiten nach {destination.name}</h1>
 
 <f:flashMessages />
 
@@ -28,9 +27,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
 		<table class="table table-striped">
 			<thead>
 			<tr>
-				<th>Beschreibung</th>
-				<th>Start</th>
-				<th>Datum</th>
+				<th><f:translate key="tx_ride_domain_model_ride.description" /></th>
+				<th><f:translate key="tx_ride_domain_model_ride.start" /></th>
+				<th><f:translate key="tx_ride_domain_model_ride.date" /></th>
 				<th>#</th>
 			</tr>
 			</thead>
@@ -65,11 +64,11 @@ Otherwise your changes will be overwritten the next time you save the extension 
 </f:if>
 <f:if condition="{feUser}">
 	<f:then>
-		<f:link.action action="new"><span class="btn">Neuen Eintrag erstellen</span></f:link.action>
+		<f:link.action action="new"><span class="btn"><f:translate key="tx_ride_domain_model_ride.createnew" /></span></f:link.action>
 	</f:then>
 	<f:else>
 		<f:if condition="{settings.registrationPid}">
-			<f:link.page pageUid="{settings.registrationPid}">Regster to post an ride</f:link.page>
+			<f:link.page pageUid="{settings.registrationPid}"><f:translate key="tx_ride_domain_model_ride.havetoregister" /></f:link.page>
 		</f:if>
 	</f:else>
 </f:if>

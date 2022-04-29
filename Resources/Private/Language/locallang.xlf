@@ -63,6 +63,33 @@
 			<trans-unit id="tx_addressmgmt_domain_model_address.longitude">
 				<source>Longitude</source>
 			</trans-unit>
+			<trans-unit id="flashMessage.newCouch">
+				<source>Neuer Eintrag wurde erstellt.</source>
+				
+			<trans-unit id="flashMessage.updateCouch">
+				<source>Der Eintrag wurde aktualisiert.</source>
+			</trans-unit>
+			<trans-unit id="flashMessage.deleteCouch">
+				<source>Der Eintrag wurde gelöscht.</source>
+			</trans-unit>
+			<trans-unit id="tx_ride_domain_model_ride.havetoregister">
+				<source>Registrieren um einen Eintrag zu erstellen</source>
+			</trans-unit>
+			<trans-unit id="tx_ride_domain_model_ride.title">
+				<source>Titel</source>
+			</trans-unit>
+			<trans-unit id="tx_ride_domain_model_ride.until">
+				<source>Ende</source>
+			</trans-unit>
+			<trans-unit id="tx_ride_domain_model_ride.showentry">
+				<source>Eintrag ansehen</source>
+			</trans-unit>
+			<trans-unit id="tx_ride_domain_model_ride.createnew">
+				<source>Eintrag erstellen</source>
+			</trans-unit>
+			<trans-unit id="tx_ride_domain_model_ride.backtolist">
+				<source>Zurück zur Liste</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
