@@ -1,0 +1,2 @@
+# cat=basic;type=boolean; label=Show all couches without language limitations
+ignoreLanguages = false
