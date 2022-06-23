@@ -126,7 +126,12 @@ class RideController extends ActionController
     	if(is_null($this->addressRepository->findByUid($this->settings['destination']))){
     		throw new \Exception('Please specify a destination in backend plugin',1469627469);
     	}
-        $rides = $this->rideRepository->findAll();
+
+        if ($this->settings['orderBy'] && $this->settings['orderDirection']) {
+            $orderings = array($this->settings['orderBy'] => $this->settings['orderDirection']);
+        }
+
+        $rides = $this->rideRepository->findDemanded(null,null,null, $orderings);
 
         $this->view->assign('feUser', $this->access->getLoggedInFrontendUser());
         $this->view->assign('rides', $rides);

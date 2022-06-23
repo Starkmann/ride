@@ -65,7 +65,7 @@
 			</trans-unit>
 			<trans-unit id="flashMessage.newCouch">
 				<source>Neuer Eintrag wurde erstellt.</source>
-				
+			</trans-unit>
 			<trans-unit id="flashMessage.updateCouch">
 				<source>Der Eintrag wurde aktualisiert.</source>
 			</trans-unit>

@@ -3,6 +3,7 @@ namespace Eike\Ride\Domain\Repository;
 
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use Undkonsorten\Addressmgmt\Domain\Repository\AddressRepository;
 
 /***************************************************************
@@ -35,6 +36,11 @@ use Undkonsorten\Addressmgmt\Domain\Repository\AddressRepository;
  */
 class RideRepository extends AddressRepository
 {
+
+    protected $defaultOrderings = [
+        'date' => QueryInterface::ORDER_ASCENDING,
+        'start.city' => QueryInterface::ORDER_ASCENDING
+    ];
 
     public function findDemanded($addresses = NULL, $categories = NULL, $publishState = NULL, $orderings = null)
     {
