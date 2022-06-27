@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	 <file datatype="plaintext" source-language="en" original="EXT:ride/Resources/Private/Language/locallang.xlf" product-name="ride" target-language="de">
-        <header/>
-      	<body>
+	<file source-language="de" target-language="en" datatype="plaintext" original="messages" date="2016-06-06T13:25:21Z" product-name="couch">
+	<header/>
+		<body>
 			<trans-unit id="tx_ride_domain_model_ride">
-				<source>Offer</source>
-				<target>Angebot</target>
+				<source>Angebot</source>
+				<target>Offer</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.description">
-				<source>Description</source>
-				<target>Beschreibung</target>
+				<source>Beschreibung</source>
+				<target>Description</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.date">
-				<source>Date</source>
-				<target>Datum</target>
+				<source>Datum</source>
+				<target>Date</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.space">
-				<source>Possible number of people</source>
-				<target>Mögliche Personenzahl</target>
+				<source>Mögliche Personenzahl</source>
+				<target>Possible number of people</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.route">
 				<source>Route</source>
@@ -25,51 +25,55 @@
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.returning">
 				<source>Returning</source>
-				<target>Zurück</target>
+				<target>Returning</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.driver">
-				<source>Driver</source>
-				<target>Fahrer_in</target>
+				<source>Fahrer_in</source>
+				<target>Driver</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.destination">
-				<source>Destination</source>
-				<target>Ziel</target>
+				<source>Ziel</source>
+				<target>Destination</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.start">
-				<source>Departure</source>
-				<target>Start</target>
+				<source>Start</source>
+				<target>Departure</target>
+			</trans-unit>
+			<trans-unit id="tx_ride_domain_model_feuser">
+				<source>Fe User</source>
+				<target>Fe User</target>
 			</trans-unit>
 			<trans-unit id="tx_addressmgmt_domain_model_address">
-				<source>Adress</source>
-				<target>Adresse</target>
+				<source>Adresse</source>
+				<target>Adress</target>
 			</trans-unit>
 			<trans-unit id="tx_addressmgmt_domain_model_address.name">
 				<source>Name</source>
 				<target>Name</target>
 			</trans-unit>
 			<trans-unit id="tx_addressmgmt_domain_model_address.street">
-				<source>Street</source>
-				<target>Straße</target>
+				<source>Straße</source>
+				<target>Street</target>
 			</trans-unit>
 			<trans-unit id="tx_addressmgmt_domain_model_address.street_number">
-				<source>Number</source>
-				<target>Hausnummer</target>
+				<source>Hausnummer</source>
+				<target>Number</target>
 			</trans-unit>
 			<trans-unit id="tx_addressmgmt_domain_model_address.city">
-				<source>Venue</source>
-				<target>Ort</target>
+				<source>Ort</source>
+				<target>Venue</target>
 			</trans-unit>
 			<trans-unit id="tx_addressmgmt_domain_model_address.zip">
-				<source>ZIP</source>
-				<target>PLZ</target>
+				<source>PLZ</source>
+				<target>ZIP</target>
 			</trans-unit>
 			<trans-unit id="tx_addressmgmt_domain_model_address.country">
-				<source>Country</source>
-				<target>PLZ</target>
+				<source>Land</source>
+				<target>Country</target>
 			</trans-unit>
 			<trans-unit id="tx_addressmgmt_domain_model_address.state">
-				<source>State</source>
-				<target>Bundesland</target>
+				<source>Bundesland</source>
+				<target>State</target>
 			</trans-unit>
 			<trans-unit id="tx_addressmgmt_domain_model_address.latitude">
 				<source>Latitude</source>
@@ -79,29 +83,41 @@
 				<source>Longitude</source>
 				<target>Longitude</target>
 			</trans-unit>
+			<trans-unit id="flashMessage.newCouch">
+				<source>Neuer Eintrag wurde erstellt.</source>
+				<target state="translated">New entry has been made.</target>
+			</trans-unit>
+			<trans-unit id="flashMessage.updateCouch">
+				<source>Der Eintrag wurde aktualisiert.</source>
+				<target state="translated">The entry has been updated.</target>
+			</trans-unit>
+			<trans-unit id="flashMessage.deleteCouch">
+				<source>Der Eintrag wurde gelöscht.</source>
+				<target state="translated">The entry has been erased.</target>
+			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.havetoregister">
-				<source>Register to create an entry</source>
-				<target>Registrieren um einen Eintrag zu erstellen</target>
+				<source>Registrieren um einen Eintrag zu erstellen</source>
+				<target state="translated">Register to create an entry</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.title">
-				<source>title</source>
-				<target>Titel</target>
+				<source>Titel</source>
+				<target state="translated">title</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.until">
-				<source>stop</source>
-				<target>Ende</target>
+				<source>Ende</source>
+				<target state="translated">stop</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.showentry">
-				<source>Show Entry</source>
-				<target>Eintrag ansehen</target>
+				<source>Eintrag ansehen</source>
+				<target state="translated">Show Entry</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.createnew">
-				<source>Create new entry</source>
-				<target>Eintrag erstellen</target>
+				<source>Eintrag erstellen</source>
+				<target state="translated">Create new entry</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.backtolist">
-				<source>Back to our Map</source>
-				<target>Zurück zur Karte</target>
+				<source>Zurück zur Liste</source>
+				<target state="translated">Back to our Map</target>
 			</trans-unit>
 		</body>
 	</file>
