@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="de" target-language="fe" datatype="plaintext" original="messages" date="2016-06-06T13:25:21Z" product-name="couch">
-		<header/>
-		<body>
-			<trans-unit id="tx_ride_domain_model_ride">
-				<source>Angebot</source>
-				<target>Offer</target>
+	 <file datatype="plaintext" source-language="en" original="EXT:frab_integration/Resources/Private/Language/locallang.xlf" product-name="ride" target-language="fr">
+        <header/>
+        	<trans-unit id="tx_ride_domain_model_ride">
+				<source>Offer</source>
+				<target>Offre</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.description">
-				<source>Beschreibung</source>
+				<source>Description</source>
 				<target>Description</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.date">
-				<source>Datum</source>
+				<source>Date</source>
 				<target>Date</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.space">
-				<source>Mögliche Personenzahl</source>
-				<target>Nombre de personnes possible</target>
+				<source>Possible number of people</source>
+				<target>Nombre possible de personnes</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.route">
 				<source>Route</source>
@@ -25,26 +24,22 @@
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.returning">
 				<source>Returning</source>
-				<target>Retournant</target>
+				<target>Retour à</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.driver">
-				<source>Fahrer_in</source>
-				<target>conductrice / conducteur</target>
+				<source>Driver</source>
+				<target>Chauffeur</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.destination">
-				<source>Ziel</source>
+				<source>Destination</source>
 				<target>Destination</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.start">
-				<source>Start</source>
+				<source>Departure</source>
 				<target>Départ</target>
 			</trans-unit>
-			<trans-unit id="tx_ride_domain_model_feuser">
-				<source>Fe User</source>
-				<target>Fe User</target>
-			</trans-unit>
 			<trans-unit id="tx_addressmgmt_domain_model_address">
-				<source>Adresse</source>
+				<source>Adress</source>
 				<target>Adresse</target>
 			</trans-unit>
 			<trans-unit id="tx_addressmgmt_domain_model_address.name">
@@ -52,28 +47,28 @@
 				<target>Nom</target>
 			</trans-unit>
 			<trans-unit id="tx_addressmgmt_domain_model_address.street">
-				<source>Straße</source>
+				<source>Street</source>
 				<target>Rue</target>
 			</trans-unit>
 			<trans-unit id="tx_addressmgmt_domain_model_address.street_number">
-				<source>Hausnummer</source>
-				<target>Numéro</target>
+				<source>Number</source>
+				<target>Numéro de maison</target>
 			</trans-unit>
 			<trans-unit id="tx_addressmgmt_domain_model_address.city">
-				<source>Ort</source>
+				<source>Venue</source>
 				<target>Lieu</target>
 			</trans-unit>
 			<trans-unit id="tx_addressmgmt_domain_model_address.zip">
-				<source>PLZ</source>
+				<source>ZIP</source>
 				<target>Code postal</target>
 			</trans-unit>
 			<trans-unit id="tx_addressmgmt_domain_model_address.country">
-				<source>Land</source>
-				<target>Pays</target>
+				<source>Country</source>
+				<target>Code postal</target>
 			</trans-unit>
 			<trans-unit id="tx_addressmgmt_domain_model_address.state">
-				<source>Bundesland</source>
-				<target>Département</target>
+				<source>State</source>
+				<target>Etat</target>
 			</trans-unit>
 			<trans-unit id="tx_addressmgmt_domain_model_address.latitude">
 				<source>Latitude</source>
@@ -83,44 +78,29 @@
 				<source>Longitude</source>
 				<target>Longitude</target>
 			</trans-unit>
-			<trans-unit id="flashMessage.newCouch">
-				<source>Neuer Eintrag wurde erstellt.</source>
-				<target>nouvelle entrée a été créée.</target>
-			</trans-unit>
-			<trans-unit id="flashMessage.updateCouch">
-				<source>Der Eintrag wurde aktualisiert.</source>
-				<target>l'entrée a été mise à jour.</target>
-			</trans-unit>
-			<trans-unit id="flashMessage.deleteCouch">
-				<source>Der Eintrag wurde gelöscht.</source>
-				<target>l'entrée a été supprimée.</target>
-			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.havetoregister">
+				<source>Register to create an entry</source>
 				<target>Inscrivez-vous pour créer une entrée</target>
 			</trans-unit>
-			<trans-unit id="tx_ride_domain_model_ride.description">
-				<source>Beschreibung</source>
-				<target state="translated">La description</target>
-			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.title">
-				<source>Titel</source>
-				<target state="translated">Titre</target>
+				<source>title</source>
+				<target>Titre</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.until">
-				<source>Ende</source>
-				<target state="translated">jusqu'à</target>
+				<source>stop</source>
+				<target>fin</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.showentry">
-				<source>Eintrag ansehen</source>
-				<target state="translated">voir l'entrée</target>
+				<source>Show Entry</source>
+				<target>voir l'entrée</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.createnew">
-				<source>Eintrag erstellen</source>
-				<target state="translated">Créer une entrée</target>
+				<source>Create new entry</source>
+				<target>Créer une entrée</target>
 			</trans-unit>
 			<trans-unit id="tx_ride_domain_model_ride.backtolist">
-				<source>Zurück zur Liste</source>
-				<target state="translated">Retour à notre carte</target>
+				<source>Back to our Map</source>
+				<target>retour à la liste</target>
 			</trans-unit>
 		</body>
 	</file>
