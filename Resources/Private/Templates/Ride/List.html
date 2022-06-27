@@ -19,7 +19,16 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:flashMessages />
 
 
-
+<f:if condition="{feUser}">
+	<f:then>
+		<f:link.action action="new" class="button"><f:translate key="tx_ride_domain_model_ride.createnew" /></f:link.action>
+	</f:then>
+	<f:else>
+		<f:if condition="{settings.registrationPid}">
+			<f:link.page pageUid="{settings.registrationPid}" class="button"><f:translate key="tx_ride_domain_model_ride.havetoregister" /></f:link.page>
+		</f:if>
+	</f:else>
+</f:if>
 <f:if condition="{rides}">
 	<f:then>
 		<f:render partial="Map/Show" arguments="{addresses:rides, contentUid:contentUid}"/>
@@ -46,7 +55,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 						{ride.date -> f:format.date(format:'Y/m/d H:i')}
 					</td>
 					<td>
-						<f:link.action action="show" arguments="{ride : ride}"><span class="btn btn-small">Eintrag ansehen</span> </f:link.action>
+						<f:link.action action="show" arguments="{ride : ride}"><span class="btn btn-small"><f:translate key="tx_ride_domain_model_ride.showentry" /></span> </f:link.action>
 					</td>
 					<td>
 						<f:render partial="ButtonsEditDelete" arguments="{ride : ride, feUser:feUser}" />
@@ -64,11 +73,11 @@ Otherwise your changes will be overwritten the next time you save the extension 
 </f:if>
 <f:if condition="{feUser}">
 	<f:then>
-		<f:link.action action="new"><span class="btn"><f:translate key="tx_ride_domain_model_ride.createnew" /></span></f:link.action>
+		<f:link.action action="new" class="button"><f:translate key="tx_ride_domain_model_ride.createnew" /></f:link.action>
 	</f:then>
 	<f:else>
 		<f:if condition="{settings.registrationPid}">
-			<f:link.page pageUid="{settings.registrationPid}"><f:translate key="tx_ride_domain_model_ride.havetoregister" /></f:link.page>
+			<f:link.page pageUid="{settings.registrationPid}" class="button"><f:translate key="tx_ride_domain_model_ride.havetoregister" /></f:link.page>
 		</f:if>
 	</f:else>
 </f:if>
